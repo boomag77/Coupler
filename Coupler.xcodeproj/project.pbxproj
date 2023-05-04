@@ -7,25 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5673EE029F0DB7A00D060C9 /* DictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5673EDF29F0DB7A00D060C9 /* DictViewController.swift */; };
+		A5673EE329F16F2200D060C9 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5673EE129F16F2200D060C9 /* WordCell.swift */; };
+		A5673EE429F16F2200D060C9 /* WordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5673EE229F16F2200D060C9 /* WordCell.xib */; };
+		A584A5FD29DDFCFD008D08AB /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A584A5FC29DDFCFD008D08AB /* WordModel.swift */; };
+		A584A5FF29DE04C3008D08AB /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A584A5FE29DE04C3008D08AB /* StorageManager.swift */; };
+		A5B8BACF29D7C3AA00DFBD5C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8BACD29D7C3AA00DFBD5C /* StartViewController.swift */; };
 		A5D25B3B29CDFF90003F6C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D25B3A29CDFF90003F6C7A /* AppDelegate.swift */; };
 		A5D25B3D29CDFF90003F6C7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D25B3C29CDFF90003F6C7A /* SceneDelegate.swift */; };
-		A5D25B3F29CDFF90003F6C7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D25B3E29CDFF90003F6C7A /* ViewController.swift */; };
 		A5D25B4229CDFF90003F6C7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D25B4029CDFF90003F6C7A /* Main.storyboard */; };
 		A5D25B4529CDFF90003F6C7A /* Coupler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5D25B4329CDFF90003F6C7A /* Coupler.xcdatamodeld */; };
 		A5D25B4729CDFF97003F6C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D25B4629CDFF97003F6C7A /* Assets.xcassets */; };
 		A5D25B4A29CDFF97003F6C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D25B4829CDFF97003F6C7A /* LaunchScreen.storyboard */; };
+		A5D25B5729CE13C1003F6C7A /* NewWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D25B5629CE13C1003F6C7A /* NewWordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5673EDF29F0DB7A00D060C9 /* DictViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictViewController.swift; sourceTree = "<group>"; };
+		A5673EE129F16F2200D060C9 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
+		A5673EE229F16F2200D060C9 /* WordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordCell.xib; sourceTree = "<group>"; };
+		A584A5FC29DDFCFD008D08AB /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
+		A584A5FE29DE04C3008D08AB /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		A5B8BACD29D7C3AA00DFBD5C /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A5D25B3729CDFF90003F6C7A /* Coupler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coupler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D25B3A29CDFF90003F6C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D25B3C29CDFF90003F6C7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A5D25B3E29CDFF90003F6C7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A5D25B4129CDFF90003F6C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5D25B4429CDFF90003F6C7A /* Coupler.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Coupler.xcdatamodel; sourceTree = "<group>"; };
 		A5D25B4629CDFF97003F6C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5D25B4929CDFF97003F6C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5D25B4B29CDFF97003F6C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5D25B5629CE13C1003F6C7A /* NewWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +72,44 @@
 			children = (
 				A5D25B3A29CDFF90003F6C7A /* AppDelegate.swift */,
 				A5D25B3C29CDFF90003F6C7A /* SceneDelegate.swift */,
-				A5D25B3E29CDFF90003F6C7A /* ViewController.swift */,
-				A5D25B4029CDFF90003F6C7A /* Main.storyboard */,
+				A5D25B5129CDFFFF003F6C7A /* Model */,
+				A5D25B5329CE0016003F6C7A /* Controller */,
+				A5D25B5229CE000B003F6C7A /* View */,
 				A5D25B4629CDFF97003F6C7A /* Assets.xcassets */,
-				A5D25B4829CDFF97003F6C7A /* LaunchScreen.storyboard */,
 				A5D25B4B29CDFF97003F6C7A /* Info.plist */,
 				A5D25B4329CDFF90003F6C7A /* Coupler.xcdatamodeld */,
 			);
 			path = Coupler;
+			sourceTree = "<group>";
+		};
+		A5D25B5129CDFFFF003F6C7A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A584A5FC29DDFCFD008D08AB /* WordModel.swift */,
+				A584A5FE29DE04C3008D08AB /* StorageManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A5D25B5229CE000B003F6C7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5673EE229F16F2200D060C9 /* WordCell.xib */,
+				A5D25B4829CDFF97003F6C7A /* LaunchScreen.storyboard */,
+				A5D25B4029CDFF90003F6C7A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5D25B5329CE0016003F6C7A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5B8BACD29D7C3AA00DFBD5C /* StartViewController.swift */,
+				A5D25B5629CE13C1003F6C7A /* NewWordViewController.swift */,
+				A5673EDF29F0DB7A00D060C9 /* DictViewController.swift */,
+				A5673EE129F16F2200D060C9 /* WordCell.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5D25B4A29CDFF97003F6C7A /* LaunchScreen.storyboard in Resources */,
+				A5673EE429F16F2200D060C9 /* WordCell.xib in Resources */,
 				A5D25B4729CDFF97003F6C7A /* Assets.xcassets in Resources */,
 				A5D25B4229CDFF90003F6C7A /* Main.storyboard in Resources */,
 			);
@@ -141,10 +184,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5D25B3F29CDFF90003F6C7A /* ViewController.swift in Sources */,
+				A5B8BACF29D7C3AA00DFBD5C /* StartViewController.swift in Sources */,
 				A5D25B3B29CDFF90003F6C7A /* AppDelegate.swift in Sources */,
+				A5D25B5729CE13C1003F6C7A /* NewWordViewController.swift in Sources */,
+				A5673EE329F16F2200D060C9 /* WordCell.swift in Sources */,
+				A584A5FF29DE04C3008D08AB /* StorageManager.swift in Sources */,
 				A5D25B4529CDFF90003F6C7A /* Coupler.xcdatamodeld in Sources */,
 				A5D25B3D29CDFF90003F6C7A /* SceneDelegate.swift in Sources */,
+				A5673EE029F0DB7A00D060C9 /* DictViewController.swift in Sources */,
+				A584A5FD29DDFCFD008D08AB /* WordModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -294,11 +342,14 @@
 				DEVELOPMENT_TEAM = 66Q476X4QM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Coupler/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Coupler;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +357,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = S.Burdakov.Coupler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,11 +376,14 @@
 				DEVELOPMENT_TEAM = 66Q476X4QM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Coupler/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Coupler;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,6 +391,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = S.Burdakov.Coupler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
