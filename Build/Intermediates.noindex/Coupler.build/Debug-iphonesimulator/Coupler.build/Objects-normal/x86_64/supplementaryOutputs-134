@@ -1,0 +1,15 @@
+"/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/WordCell.swift":
+  swift-dependencies: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/WordCell.swiftdeps"
+  object: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/WordCell.o"
+  diagnostics: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/WordCell.dia"
+  dependencies: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/WordCell.d"
+"/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/StorageManager.swift":
+  object: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/StorageManager.o"
+  swift-dependencies: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/StorageManager.swiftdeps"
+  dependencies: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/StorageManager.d"
+  diagnostics: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/StorageManager.dia"
+"/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/MeaningLabel.swift":
+  object: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/MeaningLabel.o"
+  dependencies: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/MeaningLabel.d"
+  swift-dependencies: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/MeaningLabel.swiftdeps"
+  diagnostics: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/MeaningLabel.dia"

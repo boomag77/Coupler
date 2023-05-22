@@ -1,0 +1,15 @@
+"/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/WordModel.swift":
+  swift-dependencies: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/WordModel.swiftdeps"
+  dependencies: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/WordModel.d"
+  diagnostics: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/WordModel.dia"
+  object: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/WordModel.o"
+"/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/DerivedSources/CoreDataGenerated/Coupler/Word+CoreDataClass.swift":
+  diagnostics: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/Word+CoreDataClass.dia"
+  dependencies: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/Word+CoreDataClass.d"
+  swift-dependencies: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/Word+CoreDataClass.swiftdeps"
+  object: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/Word+CoreDataClass.o"
+"/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/DictViewController.swift":
+  dependencies: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/DictViewController.d"
+  swift-dependencies: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/DictViewController.swiftdeps"
+  diagnostics: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/DictViewController.dia"
+  object: "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/Objects-normal/x86_64/DictViewController.o"

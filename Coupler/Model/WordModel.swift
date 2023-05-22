@@ -8,7 +8,14 @@ enum StorageType: String {
 
 struct WordModel {
     
-    init(name: String, wordDescription: String, storage: String, wasRight: Int64?, wasWrong: Int64?) {
+    init(name: String,
+         wordDescription: String,
+         storage: String,
+         wasRight: Int64? = nil,
+         wasWrong: Int64? = nil,
+         dateOfAdd: String? = nil,
+         lastTrained: String? = nil
+    ) {
         self.name = name
         self.wordDescription = wordDescription
         self.storage = storage
@@ -22,18 +29,37 @@ struct WordModel {
         } else {
             self.wasWrong = 0
         }
+        if let date = dateOfAdd {
+            self.dateOfAdd = date
+        } else {
+            let dateFormat = DateFormatter()
+            dateFormat.locale = Locale.current
+            dateFormat.dateStyle = .medium
+            dateFormat.timeStyle = .none
+            let date = Date()
+            self.dateOfAdd = dateFormat.string(from: date)
+        }
     }
     
     var name: String
     var wordDescription: String
     var storage: String
+    var dateOfAdd: String?
+//    {
+//        let dateFormat = DateFormatter()
+//        dateFormat.locale = Locale.current
+//        dateFormat.dateStyle = .medium
+//        dateFormat.timeStyle = .none
+//        let date = Date()
+//        return dateFormat.string(from: date)
+//    }
     var wasRight: Int64
     var wasWrong: Int64
     var trainedCount: Int64 {
         return wasRight + wasWrong
     }
     var complexity: Float {
-        guard trainedCount > 0 else { return 100 }
+        guard trainedCount != 0 else { return 100 }
         return (Float(wasWrong) / Float(trainedCount)) * 100
     }
     var memorized: Bool {

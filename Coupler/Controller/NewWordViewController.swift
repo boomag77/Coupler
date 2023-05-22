@@ -3,8 +3,6 @@ import UIKit
 
 class NewWordViewController: UIViewController {
     
-    
-    
     @IBOutlet weak var newWordTextField: UITextField!
     @IBOutlet weak var meaningTextField: UITextField!
     
@@ -14,7 +12,7 @@ class NewWordViewController: UIViewController {
     
     var storage: DataStorageManager?
     var editingWord: WordModel?
-    var cancelButtonPressed: ((Bool) -> Void)?
+    var saveButtonPressed: ((WordModel) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +23,7 @@ class NewWordViewController: UIViewController {
     }
     
     @IBAction func closeView(_ sender: Any) {
-        if let _ = editingWord {
-            cancelButtonPressed?(true)
-        }
+        
         dismiss(animated: true)
     }
     
@@ -37,20 +33,17 @@ class NewWordViewController: UIViewController {
         else {
             return
         }
-        guard !self.storage!.isExist(word: name) else {
-            print("Word already exists!")
-            return
-        }
         let newWord = WordModel(name: name,
                                 wordDescription: description,
-                                storage: "translation",
-                                wasRight: nil,
-                                wasWrong: nil)
-        storage?.addNew(word: newWord)
-        if let _ = editingWord {
-            cancelButtonPressed?(false)
+                                storage: "translation"
+        )
+        guard let editingWord else {
+            storage?.addNew(word: newWord)
+            self.dismiss(animated: true)
+            return
         }
-        dismiss(animated: true)
+        self.storage?.edit(editingWord: editingWord, editedWord: newWord)
+        self.dismiss(animated: true)
     }
     
     @IBAction func addToGlossary(sender: UIButton) {
@@ -59,20 +52,18 @@ class NewWordViewController: UIViewController {
         else {
             return
         }
-        guard !self.storage!.isExist(word: name) else {
-            print("Word already exists!")
+        var newWord = WordModel(name: name,
+                                wordDescription: description,
+                                storage: "glossary"
+        )
+        guard let editingWord else {
+            storage?.addNew(word: newWord)
+            self.dismiss(animated: true)
             return
         }
-        let newWord = WordModel(name: name,
-                                wordDescription: description,
-                                storage: "glossary",
-                                wasRight: nil,
-                                wasWrong: nil)
-        storage?.addNew(word: newWord)
-        if let _ = editingWord {
-            cancelButtonPressed?(false)
-        }
-        dismiss(animated: true)
+        
+        self.storage?.edit(editingWord: editingWord, editedWord: newWord)
+        self.dismiss(animated: true)
     }
 
     /*

@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "8c102c455bf4fa9aa596315f56681c057818e52f9da1a9f4000b24c465801e9e"
+build_start_time: [1679684776, 629814147]
+build_end_time: [1679684776, 690034866]
+inputs:
+  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/AppDelegate.swift": !private [1679673360, 25588989]
+  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/NewWordViewController.swift": !private [1679678529, 513135433]
+  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/StartViewController.swift": !private [1679684774, 417733430]
+  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/SceneDelegate.swift": !private [1679673360, 51833629]

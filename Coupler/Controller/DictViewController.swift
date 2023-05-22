@@ -127,7 +127,15 @@ extension DictViewController: UITableViewDataSource {
 extension DictViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TOT
+        let word = dict[indexPath.row]
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let wordVC = sb.instantiateViewController(identifier: "WordViewController") as! WordViewController
+        wordVC.word = word
+        //wordVC.modalPresentationStyle = .overCurrentContext
+        //wordVC.modalTransitionStyle = .crossDissolve
+        wordVC.modalPresentationStyle = .formSheet // or .pageSheet
+        //wordVC.preferredContentSize = CGSize(width: 100, height: 120)
+        present(wordVC, animated: true)
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -147,14 +155,7 @@ extension DictViewController: UITableViewDelegate {
         let word = dict[indexPath.row]
         let actionEdit = UIContextualAction(style: .normal, title: nil) { _,_,_ in
             self.showEditForm(editingWord: word)
-            //self.storage.delete(word)
         }
-        //storage.delete(word)
-//        let actionArchive = UIContextualAction(
-//            style: .normal,
-//            title: nil) { _, _, _ in
-//            //TODO action archive
-//        }
         
         actionEdit.backgroundColor = .systemGreen
         actionEdit.image = UIImage(systemName: "pencil")
@@ -183,10 +184,9 @@ extension DictViewController {
         let editVC = sb.instantiateViewController(withIdentifier: "NewWordViewController") as! NewWordViewController
         editVC.storage = self.storage
         editVC.editingWord = editingWord
-        editVC.cancelButtonPressed = { [weak self] result in
-            if !result {
-                self?.storage.delete(editingWord)
-            }
+        editVC.saveButtonPressed = { [weak self] editedWord in
+            
+            self?.storage.edit(editingWord: editingWord, editedWord: editedWord)
             self?.dismiss(animated: true)
         }
         present(editVC, animated: true)

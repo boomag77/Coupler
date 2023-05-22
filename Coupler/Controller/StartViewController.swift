@@ -1,22 +1,18 @@
 
 import UIKit
+// View Buttons
 
 protocol DataStorageManager {
-    //var capacity: StorageCapacity {get set}
     var dataRequester: DataRequester? {get set}
     func getData(storage: StorageType, completion: @escaping ([WordModel]) -> Void)
     func getStats(completion: @escaping (StorageStat) -> Void)
     func addNew(word: WordModel)
-    func isExist(word: String) -> Bool
-    //func saveDict(dict: [WordModel])
+    //func isExist(wordName: String, completion: @escaping (WordModel?) -> Void)
     func delete(_ word: WordModel)
-    //func edit(word: WordModel)
+    func edit(editingWord: WordModel, editedWord: WordModel)
 }
 
-
 class StartViewController: UIViewController {
-    
-    
     
     @IBOutlet weak var dictionaryLabel: UILabel!
     @IBOutlet weak var glossaryLabel: UILabel!
@@ -48,11 +44,8 @@ class StartViewController: UIViewController {
         if let dictVC = segue.destination as? DictViewController {
             if segue.identifier == "ShowTranslationDict" {
                 dictVC.dictType = .translation
-                //dictVC.dict = (self.storage.getData(for: .translation))
-                
             } else {
                 dictVC.dictType = .glossary
-                //dictVC.dict = (self.storage.getData(for: .glossary))
             }
         }
     }
