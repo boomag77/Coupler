@@ -41,7 +41,7 @@ struct Training {
     
     //func create word Card (random word and 3 answers) and return it in array
     private func createCard(for word: WordModel) -> WordCard {
-        var card = WordCard(word: word.name, answers: generateAnswers(for: word))
+        var card = WordCard(wordName: word.name, answers: generateAnswers(for: word))
         return card
     }
     

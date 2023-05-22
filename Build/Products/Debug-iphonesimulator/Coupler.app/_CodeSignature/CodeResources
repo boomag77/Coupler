@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		Q1p5VssgfURNwkWD1rZMJ9gQ/Cg=
+		CfxTXh5hEvoXePfqHl1CgQmCs3s=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -22,43 +22,51 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/BYZ-38-t0r-view-t4l-XI-qVD.nib</key>
 		<data>
-		eZBKKk3AZOiwsFfjsZBxQLey9LA=
+		Ppo6YrlLALPqJ7Os9J1ppjqulnw=
 		</data>
 		<key>Base.lproj/Main.storyboardc/DictViewController.nib</key>
 		<data>
-		D+TSqwuMy/Tsrh+tfVmC31wCVeU=
+		pfSD+ZUMU+709DeEqAXrDo3By9o=
 		</data>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<data>
-		qqHbfX81XTjiCoKm/h0AFNQxQnM=
+		A88fUALhBT0u3SaBs4Jym6hPjAA=
 		</data>
 		<key>Base.lproj/Main.storyboardc/NewWordViewController.nib</key>
 		<data>
-		w6yz66pCqci6ONUWrOBQenFxxD4=
+		uEzgbQ1RtqfvcZdJaKoauckWAnI=
+		</data>
+		<key>Base.lproj/Main.storyboardc/RoJ-ff-5Fa-view-ARW-Fj-JhF.nib</key>
+		<data>
+		Doft3KCSGjdlW6fUJ/p4Xc5xM3g=
 		</data>
 		<key>Base.lproj/Main.storyboardc/UIViewController-BYZ-38-t0r.nib</key>
 		<data>
 		3Ou5hcmdh8r3WMOSRwrldF24FIQ=
 		</data>
+		<key>Base.lproj/Main.storyboardc/WordViewController.nib</key>
+		<data>
+		GRVTwJNeIMMqtiuDBREI2HsPPXg=
+		</data>
 		<key>Base.lproj/Main.storyboardc/eGo-qb-75u-view-LVh-bh-Sla.nib</key>
 		<data>
-		bpV0OIPpJ45VFheVA4gfaoUe7V0=
+		WiZeso7H5vouSIZnag7l0ygUcC8=
 		</data>
 		<key>Base.lproj/Main.storyboardc/ine-fH-WMe-view-mjA-9M-T54.nib</key>
 		<data>
-		1ntSIL2R7+5LOS7SvcwGnffKxNU=
+		CfasVyXwmgFqexeGs74IZzGvHVE=
 		</data>
 		<key>Coupler.momd/Coupler.mom</key>
 		<data>
-		MxpLmgO+CLWlx9FM62PwREx2WYc=
+		gKJGRekeS+56sDDP2mL4VQoKNNk=
 		</data>
 		<key>Coupler.momd/Coupler.omo</key>
 		<data>
-		9dxeJOLtPswrFKbJNTshw778e74=
+		Kt6UtSP9/HCEIFpQVZeR728BipM=
 		</data>
 		<key>Coupler.momd/VersionInfo.plist</key>
 		<data>
-		XxhoXHyp5GwO45rP2eWv6zbS8mM=
+		cPTP3TgS8Hsekndhns1e3fO2epo=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -79,7 +87,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9nZuku9QQtQnpiOt6/RbkHKYjjp+pMk1vfDNBK7LbY8=
+			1xSeEmz+lgLMCNwrH0FVyddMiebuUwpLGq0Mjs9f7bI=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
@@ -107,28 +115,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NeWIwkQXt/1MfunseVEe7HLPfwKP8KXq1BGDjLs0aIg=
+			TLIU232T+xVWFn647h1So2B4iUUc4PXplxPsQPwht8A=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/DictViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y3aO1OXqjKK1Wb09OYngMvUBPIBuCpLfA+hP8Dm8zFg=
+			XH7WftBcW2mgap9vstWa3n+ubTNZZ66Wp+iiLp9lHXU=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			obR6RtSvPZugulJSN6aPUfJPMuKIXeBFFlx2gs4MU0Q=
+			orvlGj79nRl1ZOOqvNv4S2Y7v4csO+lKurFd/tojXm8=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/NewWordViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/uvujuENBmswZdmEDCaEhDyVD9Ip2vfLLEQZ1/0OX8o=
+			vQF/R67ICM6I+5b2hUYRnaM0jHeJu6nYBykxlmjpGbE=
+			</data>
+		</dict>
+		<key>Base.lproj/Main.storyboardc/RoJ-ff-5Fa-view-ARW-Fj-JhF.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/AWM6ZKSPUWoEIB8xqfMecRzptEtqbopi6BDRwkgUz8=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/UIViewController-BYZ-38-t0r.nib</key>
@@ -138,39 +153,46 @@
 			Ehm8UeZCF5Mjd0bBcppGKzax+Qlm/gZlHQ/nPCVuKu0=
 			</data>
 		</dict>
+		<key>Base.lproj/Main.storyboardc/WordViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			d/8fqNB9aucTQys38zqbkky33+ZXbRgZkuhPmqOuiDo=
+			</data>
+		</dict>
 		<key>Base.lproj/Main.storyboardc/eGo-qb-75u-view-LVh-bh-Sla.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M5vseCPuS3hyGVrrkZkk1HEOwWJTMnVIAgKyhSrxPlY=
+			nzlI7NqvurKeoSJg9Qh20X7uagiIDB5H1ApGumcIxz4=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/ine-fH-WMe-view-mjA-9M-T54.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FGQqGNa8PJzsCW49UTMd2APkVQXlkBD4XikCP8Q0dfg=
+			eR4aICU/nC5dA2lC1Uc+koYqtLQRn8DhV7iv+n+6LA8=
 			</data>
 		</dict>
 		<key>Coupler.momd/Coupler.mom</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			h/TzBgDjDbzHKLOkvgAJqTMfHPzXinvxycLTgsHNJmc=
+			fvOC3dXZe2tkMBwySx+t37tCHxwVPTc273c9l2x2hZg=
 			</data>
 		</dict>
 		<key>Coupler.momd/Coupler.omo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fLnKlzWvd3EKktCLqmN/bAtNlKWpWzy8QaoC3MASq1U=
+			OGXMDp5xaEM0TV8ow3JSXH0atpes/znIsrmsvBkCGBA=
 			</data>
 		</dict>
 		<key>Coupler.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			41CCOnDJd2J0Of+68XyzN2Vi0DXjmiaomugZTcZhzWo=
+			vYxxFTk7+ws5/z5Xn7P0sowYNJGXd2VuIUqeEXtRS0Q=
 			</data>
 		</dict>
 		<key>WordCell.nib</key>

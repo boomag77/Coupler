@@ -259,6 +259,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreData;
+@import CoreFoundation;
 @import Foundation;
 @import UIKit;
 #endif
@@ -336,6 +337,15 @@ SWIFT_CLASS("_TtC7Coupler18DictViewController")
 - (UISwipeActionsConfiguration * _Nullable)tableView:(UITableView * _Nonnull)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+SWIFT_CLASS("_TtC7Coupler12MeaningLabel")
+@interface MeaningLabel : UILabel
+- (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines SWIFT_WARN_UNUSED_RESULT;
+- (void)drawTextInRect:(CGRect)rect;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UITextField;
 
 SWIFT_CLASS("_TtC7Coupler21NewWordViewController")
@@ -385,6 +395,22 @@ SWIFT_CLASS("_TtC7Coupler19StartViewController")
 
 
 
+SWIFT_CLASS("_TtC7Coupler19TrainViewController")
+@interface TrainViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified wordNameLabel;
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface TrainViewController (SWIFT_EXTENSION(Coupler)) <UITableViewDataSource>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 SWIFT_CLASS("_TtC7Coupler8WordCell")
 @interface WordCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified nameLabel;
@@ -418,6 +444,26 @@ SWIFT_CLASS_NAMED("WordEntity")
 @property (nonatomic) int64_t wasRight;
 @property (nonatomic) int64_t wasWrong;
 @property (nonatomic, copy) NSString * _Nullable wordDescription;
+@end
+
+@class UIStackView;
+
+SWIFT_CLASS("_TtC7Coupler18WordViewController")
+@interface WordViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified wordLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dateAddedLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified storageLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified meaningLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified complexityLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified tranedCountLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified wasRightLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified wasWrongLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified meaningLabelAsButton;
+@property (nonatomic, weak) IBOutlet UIStackView * _Null_unspecified statisticsStackView;
+- (void)viewDidLoad;
+- (IBAction)cancelbuttonPressed:(UIButton * _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #endif
