@@ -18,32 +18,26 @@ class StartViewController: UIViewController {
     @IBOutlet weak var glossaryLabel: UILabel!
     
     @IBOutlet weak var translationDictViewLabel: UIView!
+    @IBOutlet weak var glossaryDictViewLabel: UIView!
     
     @IBOutlet weak var viewButtonLabel: UIButton!
     @IBOutlet weak var trainButtonLabel: UIButton!
+    @IBOutlet weak var glossaryViewButton: UIButton!
+    @IBOutlet weak var glossaryTrainButton: UIButton!
     
+    @IBOutlet weak var translationViewStatLabel: UILabel!
+    @IBOutlet weak var glossaryViewStatLabel: UILabel!
     
     var storage: DataStorageManager = StorageManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        translationDictViewLabel.layer.borderWidth = 1
-        translationDictViewLabel.layer.borderColor = UIColor.systemGray6.cgColor
-        translationDictViewLabel.layer.cornerRadius = 10
-        translationDictViewLabel.layer.shadowColor = UIColor.systemGray3.cgColor
-        translationDictViewLabel.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
-        translationDictViewLabel.layer.shadowOpacity = 1.0
-        translationDictViewLabel.layer.shadowRadius = 1.0
-        
-        viewButtonLabel.layer.shadowColor = UIColor.systemGray3.cgColor
-        viewButtonLabel.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
-        viewButtonLabel.layer.shadowOpacity = 1.0
-        viewButtonLabel.layer.shadowRadius = 1.0
-        
-        trainButtonLabel.layer.shadowColor = UIColor.systemGray3.cgColor
-        trainButtonLabel.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
-        trainButtonLabel.layer.shadowOpacity = 1.0
-        trainButtonLabel.layer.shadowRadius = 1.0
+        attributeView(translationDictViewLabel)
+        attributeView(glossaryDictViewLabel)
+        attributeButton(viewButtonLabel)
+        attributeButton(trainButtonLabel)
+        attributeButton(glossaryViewButton)
+        attributeButton(glossaryTrainButton)
         
         self.storage.dataRequester = self
         self.updateData()
@@ -53,25 +47,57 @@ class StartViewController: UIViewController {
         self.updateData()
     }
     
-    @IBAction func translationDictButtonPressed(_ sender: UIButton) {
-        //dismiss(animated: true)
+    private func attributeView(_ label: UIView) {
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray6.cgColor
+        label.layer.cornerRadius = 10
+        label.layer.shadowColor = UIColor.systemGray3.cgColor
+        label.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        label.layer.shadowOpacity = 1.0
+        label.layer.shadowRadius = 1.0
     }
     
-    @IBAction func glossaryDictButtonPressed(_ sender: UIButton) {
+    private func attributeButton(_ button: UIButton) {
+        button.layer.shadowColor = UIColor.systemGray3.cgColor
+        button.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 1.0
+    }
+    
+    @IBAction func translationViewButtonPressed(_ sender: UIButton) {
         //dismiss(animated: true)
+        self.showDictionary(with: .translation)
+    }
+    
+    @IBAction func glossaryViewButtonPressed(_ sender: UIButton) {
+        //dismiss(animated: true)
+        self.showDictionary(with: .glossary)
+    }
+    
+    @IBAction func translationTrainButtonPressed(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func glossaryTrainButtonPressed(_ sender: UIButton) {
+        
+    }
+    
+    private func showDictionary(with dictType: StorageType) {
+        let dictViewVC = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "DictViewController") as! DictViewController
+        dictViewVC.dictType = dictType
+        present(dictViewVC, animated: true)
+    }
+    
+    private func showAddNewWordForm() {
+        let addNewWordVC = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(identifier: "NewWordViewController") as! NewWordViewController
+        addNewWordVC.storage = self.storage
+        present(addNewWordVC, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let addNewWordVC = segue.destination as? NewWordViewController {
-            addNewWordVC.storage = self.storage
-        }
-        if let dictVC = segue.destination as? DictViewController {
-            if segue.identifier == "ShowTranslationDict" {
-                dictVC.dictType = .translation
-            } else {
-                dictVC.dictType = .glossary
-            }
-        }
+        
     }
 }
 
@@ -80,6 +106,8 @@ extension StartViewController: DataRequester {
         storage.getStats() { stat in
             self.dictionaryLabel.text = "Translation: \(stat.translationCount)"
             self.glossaryLabel.text = "Glossary: \(stat.glossaryCount)"
+            self.translationViewStatLabel.text = "memorized 46 / total \(stat.translationCount)"
+            self.glossaryViewStatLabel.text = "memorized 46 / total \(stat.glossaryCount)"
         }
     }
 }
