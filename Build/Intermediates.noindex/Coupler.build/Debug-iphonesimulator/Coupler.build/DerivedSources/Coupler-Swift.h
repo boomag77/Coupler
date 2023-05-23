@@ -380,12 +380,16 @@ SWIFT_CLASS("_TtC7Coupler13SceneDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIView;
 @class UIStoryboardSegue;
 
 SWIFT_CLASS("_TtC7Coupler19StartViewController")
 @interface StartViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified dictionaryLabel;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified glossaryLabel;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified translationDictViewLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified viewButtonLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified trainButtonLabel;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (IBAction)translationDictButtonPressed:(UIButton * _Nonnull)sender;

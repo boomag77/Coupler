@@ -256,7 +256,7 @@
                                                 <rect key="frame" x="20" y="51" width="390" height="629"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WordCell" translatesAutoresizingMaskIntoConstraints="NO" id="Z8H-ZQ-e5F" customClass="WordCell" customModule="Coupler" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WordCell" translatesAutoresizingMaskIntoConstraints="NO" id="Z8H-ZQ-e5F" customClass="WordCell" customModule="Coupler" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z8H-ZQ-e5F" id="hSG-mI-Ryo">
@@ -390,13 +390,13 @@
                                                         <rect key="frame" x="154.66666666666663" y="0.0" width="215.33333333333337" height="71"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5F-KH-bu9">
-                                                                <rect key="frame" x="73.666666666666657" y="0.0" width="68" height="35.666666666666664"/>
+                                                                <rect key="frame" x="73.666666666666629" y="0.0" width="68.000000000000028" height="35.666666666666664"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwd-Ph-5IZ">
-                                                                <rect key="frame" x="90.000000000000028" y="35.666666666666657" width="35.333333333333343" height="35.333333333333343"/>
+                                                                <rect key="frame" x="90" y="35.666666666666657" width="35.333333333333371" height="35.333333333333343"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -503,7 +503,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1Ub-ku-7DK">
-                                        <rect key="frame" x="0.0" y="20.333333333333314" width="390" height="818.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="20.333333333333314" width="390" height="818.66666666666652"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -552,22 +552,22 @@
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-Ni-7N9">
-                                                        <rect key="frame" x="275" y="70" width="75" height="50"/>
+                                                        <rect key="frame" x="200" y="119.99999999999999" width="100" height="34.333333333333329"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Button" cornerStyle="large">
-                                                            <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                                            <color key="baseBackgroundColor" systemColor="systemMintColor"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="DNw-ZD-Af9" firstAttribute="top" secondItem="pGb-87-G52" secondAttribute="top" constant="100" id="01I-aP-gqW"/>
-                                                    <constraint firstItem="k7l-Ni-7N9" firstAttribute="top" secondItem="DNw-ZD-Af9" secondAttribute="top" constant="-30" id="9HP-nX-MAB"/>
+                                                    <constraint firstItem="k7l-Ni-7N9" firstAttribute="top" secondItem="DNw-ZD-Af9" secondAttribute="top" constant="20" id="9HP-nX-MAB"/>
                                                     <constraint firstAttribute="trailing" secondItem="DNw-ZD-Af9" secondAttribute="trailing" id="PNR-Ne-gIG"/>
-                                                    <constraint firstItem="DNw-ZD-Af9" firstAttribute="top" secondItem="k7l-Ni-7N9" secondAttribute="bottom" constant="-20" id="YmA-Rf-sOL"/>
+                                                    <constraint firstItem="k7l-Ni-7N9" firstAttribute="leading" relation="lessThanOrEqual" secondItem="DNw-ZD-Af9" secondAttribute="leading" constant="200" id="bTE-cB-QnJ"/>
                                                     <constraint firstItem="DNw-ZD-Af9" firstAttribute="leading" secondItem="pGb-87-G52" secondAttribute="leading" id="id8-w6-cbP"/>
                                                     <constraint firstAttribute="bottom" secondItem="DNw-ZD-Af9" secondAttribute="bottom" id="kVB-zf-1pr"/>
-                                                    <constraint firstItem="DNw-ZD-Af9" firstAttribute="trailing" secondItem="k7l-Ni-7N9" secondAttribute="trailing" id="sUD-4E-sd6"/>
+                                                    <constraint firstItem="DNw-ZD-Af9" firstAttribute="trailing" secondItem="k7l-Ni-7N9" secondAttribute="trailing" constant="50" id="sUD-4E-sd6"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -606,7 +606,7 @@
                                 <rect key="frame" x="20" y="79" width="390" height="799"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Cc1-jf-Zhu">
-                                        <rect key="frame" x="33.666666666666657" y="0.0" width="322.66666666666674" height="695"/>
+                                        <rect key="frame" x="33.666666666666657" y="0.0" width="322.66666666666674" height="695.33333333333337"/>
                                         <subviews>
                                             <view contentMode="scaleAspectFill" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="wvC-Fg-agT">
                                                 <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="322.66666666666669"/>
@@ -632,79 +632,115 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="miW-nq-SBw" userLabel="Dictionaries Stack View">
-                                                <rect key="frame" x="0.0" y="372.66666666666674" width="322.66666666666669" height="322.33333333333326"/>
+                                                <rect key="frame" x="0.0" y="372.66666666666663" width="322.66666666666669" height="322.66666666666663"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Hr-TA-qlh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="136"/>
-                                                        <color key="tintColor" systemColor="systemGray6Color"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
-                                                            <backgroundConfiguration key="background">
-                                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                                <color key="strokeColor" systemColor="labelColor"/>
-                                                            </backgroundConfiguration>
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="TRANSLATION DICTIONARY">
-                                                                    <attributes>
-                                                                        <color key="NSColor" systemColor="labelColor"/>
-                                                                        <font key="NSFont" size="12" name="Helvetica"/>
-                                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
-                                                            <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                        <connections>
-                                                            <action selector="translationDictButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tvJ-oh-jrq"/>
-                                                            <segue destination="eGo-qb-75u" kind="presentation" identifier="ShowTranslationDict" modalPresentationStyle="fullScreen" id="i6N-Ez-P3a"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yM-C0-nci">
-                                                        <rect key="frame" x="0.0" y="185.99999999999994" width="322.66666666666669" height="136.33333333333331"/>
-                                                        <color key="tintColor" systemColor="systemGray6Color"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <size key="titleShadowOffset" width="4" height="5"/>
-                                                        <state key="normal">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="GLOSSARY DICTIONARY">
-                                                                    <attributes>
-                                                                        <color key="NSColor" systemColor="labelColor"/>
-                                                                        <font key="NSFont" size="12" name="Helvetica"/>
-                                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </state>
-                                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
-                                                            <backgroundConfiguration key="background">
-                                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                                <color key="strokeColor" systemColor="labelColor"/>
-                                                            </backgroundConfiguration>
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="GLOSSARY DICTIONARY">
-                                                                    <attributes>
-                                                                        <color key="NSColor" systemColor="labelColor"/>
-                                                                        <font key="NSFont" size="12" name="Helvetica"/>
-                                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
-                                                            <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                        <connections>
-                                                            <action selector="glossaryDictButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C6o-GJ-L4O"/>
-                                                            <segue destination="eGo-qb-75u" kind="presentation" identifier="ShowGlossaryDict" modalPresentationStyle="fullScreen" id="daZ-fd-lwo"/>
-                                                        </connections>
-                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggq-80-AWH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="136.33333333333334"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y53-37-pqt">
+                                                                <rect key="frame" x="0.0" y="9.9999999999999929" width="322.66666666666669" height="116.33333333333331"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="w2L-yM-6ff">
+                                                                        <rect key="frame" x="47" y="0.0" width="229" height="53.333333333333336"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRANSLATION DICTIONARY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5y-xE-NjZ">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="229" height="24"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="memorized 46 / total 68" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXy-G9-6NL">
+                                                                                <rect key="frame" x="0.0" y="29" width="229" height="24.333333333333329"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="5Nt-GM-fga">
+                                                                        <rect key="frame" x="33.333333333333343" y="63.333333333333314" width="256" height="53"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEX-Rl-lx7">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="103" height="53"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <buttonConfiguration key="configuration" style="filled" image="eye" catalog="system" title=" VIEW" cornerStyle="large">
+                                                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                                                    <color key="baseBackgroundColor" systemColor="systemGray6Color"/>
+                                                                                </buttonConfiguration>
+                                                                            </button>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztV-zb-SoL">
+                                                                                <rect key="frame" x="153" y="0.0" width="103" height="53"/>
+                                                                                <state key="normal" title="Button"/>
+                                                                                <buttonConfiguration key="configuration" style="filled" image="play" catalog="system" title=" TRAIN" cornerStyle="large">
+                                                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                                                    <color key="baseBackgroundColor" systemColor="systemGray6Color"/>
+                                                                                </buttonConfiguration>
+                                                                            </button>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Y53-37-pqt" firstAttribute="leading" secondItem="ggq-80-AWH" secondAttribute="leading" id="Og1-IE-gE5"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Y53-37-pqt" secondAttribute="bottom" constant="10" id="OmS-Tt-T5D"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Y53-37-pqt" secondAttribute="trailing" id="kfe-Oe-iC8"/>
+                                                            <constraint firstItem="Y53-37-pqt" firstAttribute="top" secondItem="ggq-80-AWH" secondAttribute="top" constant="10" id="vWM-ff-Np2"/>
+                                                        </constraints>
+                                                        <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLH-sP-anI">
+                                                        <rect key="frame" x="0.0" y="186.33333333333331" width="322.66666666666669" height="136.33333333333331"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yM-C0-nci">
+                                                                <rect key="frame" x="-0.66666666666665719" y="-1" width="322.66666666666674" height="74.333333333333343"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="tintColor" systemColor="systemGray6Color"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <size key="titleShadowOffset" width="4" height="5"/>
+                                                                <state key="normal">
+                                                                    <attributedString key="attributedTitle">
+                                                                        <fragment content="GLOSSARY DICTIONARY">
+                                                                            <attributes>
+                                                                                <color key="NSColor" systemColor="labelColor"/>
+                                                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                </state>
+                                                                <buttonConfiguration key="configuration" style="filled" cornerStyle="small">
+                                                                    <backgroundConfiguration key="background">
+                                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                                        <color key="strokeColor" systemColor="labelColor"/>
+                                                                    </backgroundConfiguration>
+                                                                    <attributedString key="attributedTitle">
+                                                                        <fragment content="GLOSSARY DICTIONARY">
+                                                                            <attributes>
+                                                                                <color key="NSColor" systemColor="labelColor"/>
+                                                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                                    <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="glossaryDictButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C6o-GJ-L4O"/>
+                                                                    <segue destination="eGo-qb-75u" kind="presentation" identifier="ShowGlossaryDict" modalPresentationStyle="fullScreen" id="daZ-fd-lwo"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fU-o5-Pqz">
-                                        <rect key="frame" x="168" y="745" width="54" height="54"/>
+                                        <rect key="frame" x="168" y="745.33333333333337" width="54" height="53.666666666666629"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="plus_button_darkbckgrnd"/>
@@ -728,6 +764,9 @@
                     <connections>
                         <outlet property="dictionaryLabel" destination="gjb-vf-0rv" id="mRN-Cf-X3b"/>
                         <outlet property="glossaryLabel" destination="ieg-FM-oWu" id="YVa-Uk-gJp"/>
+                        <outlet property="trainButtonLabel" destination="ztV-zb-SoL" id="r81-ga-wbh"/>
+                        <outlet property="translationDictViewLabel" destination="ggq-80-AWH" id="OwD-Iy-D9I"/>
+                        <outlet property="viewButtonLabel" destination="YEX-Rl-lx7" id="j9z-vY-fml"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -735,13 +774,12 @@
             <point key="canvasLocation" x="49.275362318840585" y="-36.160714285714285"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="i6N-Ez-P3a"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="accept_button" width="40" height="40"/>
         <image name="cancel_button" width="40" height="40"/>
         <image name="edit_Button" width="40" height="40"/>
+        <image name="eye" catalog="system" width="128" height="79"/>
+        <image name="play" catalog="system" width="117" height="128"/>
         <image name="plus_button_darkbckgrnd" width="54" height="54"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -760,6 +798,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
