@@ -1,7 +1,7 @@
 version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
 options: "5c1b271d285063d2020332b75d7dc99ce85c12751531f4c83185f3bb7843a605"
-build_start_time: [1684870593, 587446000]
-build_end_time: [1684870597, 259023000]
+build_start_time: [1684900251, 847804000]
+build_end_time: [1684900252, 924772000]
 inputs:
   ? "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/DerivedSources/CoreDataGenerated/Coupler/Coupler+CoreDataModel.swift"
   : [1684374951, 824267661]
@@ -13,8 +13,8 @@ inputs:
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/DictViewController.swift": [1684783618, 221602255]
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/MeaningLabel.swift": [1684783618, 222324084]
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/NewWordViewController.swift": [1684783618, 223420090]
-  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/StartViewController.swift": [1684870593, 152337832]
-  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/TrainViewController.swift": [1684783618, 225548821]
+  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/StartViewController.swift": [1684900215, 772572565]
+  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/TrainViewController.swift": [1684900251, 541117597]
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/WordCell.swift": [1683651683, 630156309]
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/WordViewController.swift": [1684783618, 226238026]
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/StorageManager.swift": [1684783618, 228386511]

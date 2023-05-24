@@ -17,8 +17,8 @@ class TrainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let training = Training(storageType: storageType!)
-        let wordForTest = training.getCard()
+        //let training = Training(storageType: storageType!)
+        //let wordForTest = training.getCard()
         // Do any additional setup after loading the view.
     }
     

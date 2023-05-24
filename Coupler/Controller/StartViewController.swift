@@ -52,14 +52,14 @@ class StartViewController: UIViewController {
         label.layer.borderColor = UIColor.systemGray6.cgColor
         label.layer.cornerRadius = 10
         label.layer.shadowColor = UIColor.systemGray3.cgColor
-        label.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        label.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         label.layer.shadowOpacity = 1.0
         label.layer.shadowRadius = 1.0
     }
     
     private func attributeButton(_ button: UIButton) {
         button.layer.shadowColor = UIColor.systemGray3.cgColor
-        button.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
+        button.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 1.0
     }
@@ -75,11 +75,15 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func translationTrainButtonPressed(_ sender: UIButton) {
-        
+        let trainVC = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(identifier: "TrainViewController") as! TrainViewController
+        present(trainVC, animated: true)
     }
     
     @IBAction func glossaryTrainButtonPressed(_ sender: UIButton) {
-        
+        let trainVC = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(identifier: "TrainViewController") as! TrainViewController
+        present(trainVC, animated: true)
     }
     
     private func showDictionary(with dictType: StorageType) {
