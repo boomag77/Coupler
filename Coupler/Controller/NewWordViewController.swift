@@ -52,7 +52,7 @@ class NewWordViewController: UIViewController {
         else {
             return
         }
-        var newWord = WordModel(name: name,
+        let newWord = WordModel(name: name,
                                 wordDescription: description,
                                 storage: "glossary"
         )

@@ -42,10 +42,6 @@ class DictViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.updateData()
-    }
-    
     @IBAction func closeButtonPresent(_ sender: UIButton) {
         self.dismiss(animated: true)
     }

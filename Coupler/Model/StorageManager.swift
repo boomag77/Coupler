@@ -9,7 +9,7 @@ struct StorageStat {
     var glossaryCount: Int
 }
 
-protocol DataRequester: UIViewController {
+protocol DataRequester: AnyObject {
     func updateData()
 }
 
@@ -75,6 +75,7 @@ class StorageManager: DataStorageManager {
                 
                 let entities = try self.managedContext.fetch(fetchRequest)
                 let words = self.transformToWordModel(entities: entities)
+                print("from completion - \(words)")
                 completion(words)
                 
             } catch let error as NSError {

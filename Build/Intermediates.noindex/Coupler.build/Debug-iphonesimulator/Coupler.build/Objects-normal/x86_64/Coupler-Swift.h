@@ -311,7 +311,6 @@ SWIFT_CLASS("_TtC7Coupler18DictViewController")
 @property (nonatomic, weak) IBOutlet UISegmentedControl * _Null_unspecified sortingControlLabel;
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)animated;
 - (IBAction)closeButtonPresent:(UIButton * _Nonnull)sender;
 - (IBAction)sortConditionSelected:(UISegmentedControl * _Nonnull)sender;
 - (IBAction)sortConditionPressed:(UISegmentedControl * _Nonnull)sender;

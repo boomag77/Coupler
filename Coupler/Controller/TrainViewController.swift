@@ -1,58 +1,68 @@
-//
-//  TrainViewController.swift
-//  Coupler
-//
-//  Created by Sergey on 5/19/23.
-//
 
 import UIKit
 
+enum AnswerWas {
+    case right
+    case wrong
+}
+
+protocol CardGeneratorProtocol: AnyObject {
+    func generateCard(from dictType: StorageType) -> WordCard?
+}
+
 class TrainViewController: UIViewController {
     
-    var storageType: StorageType?
-    var answers: [String] = []
+    var dictType: StorageType?
+    var cardToShow: WordCard?
+    var wordsToTrain: [WordModel]?
     
     @IBOutlet weak var wordNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let training = Training(storageType: storageType!)
-        //let wordForTest = training.getCard()
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        self.showCard()
+        //wordNameLabel.text = storageType?.rawValue
+        //self.trainManager?.start()
+        
+        //showCard(for: card)
     }
     
-    func showCurrentWord(_ word: WordCard) {
-        wordNameLabel.text = word.wordName
-        answers = word.answers
-        tableView.reloadData()
+    func showCard() {
+        
+        let cardGenerator = CardGenerator(dictType: self.dictType!, words: self.wordsToTrain!)
+        self.cardToShow = cardGenerator.generateCard()
+        tableView.dataSource = self
+        wordNameLabel.text = cardToShow?.wordName
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func isRight(answer: Int) -> Bool {
+        
+        return true
     }
-    */
+    
+    private func markAnswer(as answerWas: AnswerWas) {
+        
+    }
 
 }
 
 extension TrainViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.cardToShow!.answers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let answer = self.answers[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WordCell")
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell")
+        var content = cell?.defaultContentConfiguration()
+        content?.text = cardToShow?.answers[indexPath.row]
+        cell?.contentConfiguration = content
         
         return cell!
     }
-    
     
 }
