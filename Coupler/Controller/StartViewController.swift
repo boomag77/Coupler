@@ -79,13 +79,13 @@ class StartViewController: UIViewController {
             .instantiateViewController(identifier: "TrainViewController") as! TrainViewController
         trainVC.dictType = .translation
         present(trainVC, animated: true)
+        
     }
     
     @IBAction func glossaryTrainButtonPressed(_ sender: UIButton) {
         let trainVC = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(identifier: "TrainViewController") as! TrainViewController
         trainVC.dictType = .glossary
-        
         present(trainVC, animated: true)
     }
     

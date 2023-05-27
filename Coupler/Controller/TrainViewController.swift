@@ -20,27 +20,25 @@ class TrainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.dataSource = self
-        showCard()
+        show()
         
     }
     
-    func showCard() {
-        
+    private func getCardToShow() {
         let cardGenerator = CardGenerator(dictType: self.dictType!)
-        
-        cardToShow = cardGenerator.generateCard()
+        self.cardToShow = cardGenerator.generateCard()
+    }
+    
+    func show() {
+        getCardToShow()
         guard let cardToShow else {
             self.wordNameLabel.text = "no words to show"
             return
         }
         self.wordNameLabel.text = cardToShow.wordName
         self.tableView.reloadData()
-    }
-    
-    private func isRight(answer: Int) -> Bool {
-        
-        return true
     }
     
     private func markAnswer(as answerWas: AnswerWas) {
