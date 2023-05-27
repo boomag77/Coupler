@@ -70,19 +70,19 @@ class StorageManager: DataStorageManager {
         }
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "WordEntity")
         fetchRequest.predicate = predicate
-        DispatchQueue.main.async {
-            do {
-                
-                let entities = try self.managedContext.fetch(fetchRequest)
-                let words = self.transformToWordModel(entities: entities)
-                print("from completion - \(words)")
-                completion(words)
-                
-            } catch let error as NSError {
-                print("Could not fetch. \(error), \(error.userInfo)")
-                completion([])
-            }
+        
+        do {
+            
+            let entities = try self.managedContext.fetch(fetchRequest)
+            let words = self.transformToWordModel(entities: entities)
+            print("from completion - \(words)")
+            completion(words)
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            completion([])
         }
+        
     }
     
     private func isExist(wordName: String, completion: @escaping (WordModel?) -> Void) {

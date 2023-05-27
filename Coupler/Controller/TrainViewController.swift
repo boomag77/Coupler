@@ -14,7 +14,6 @@ class TrainViewController: UIViewController {
     
     var dictType: StorageType?
     var cardToShow: WordCard?
-    var wordsToTrain: [WordModel]?
     
     @IBOutlet weak var wordNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -22,20 +21,21 @@ class TrainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        self.showCard()
-        //wordNameLabel.text = storageType?.rawValue
-        //self.trainManager?.start()
+        showCard()
         
-        //showCard(for: card)
     }
     
     func showCard() {
         
-        let cardGenerator = CardGenerator(dictType: self.dictType!, words: self.wordsToTrain!)
-        self.cardToShow = cardGenerator.generateCard()
-        tableView.dataSource = self
-        wordNameLabel.text = cardToShow?.wordName
+        let cardGenerator = CardGenerator(dictType: self.dictType!)
         
+        cardToShow = cardGenerator.generateCard()
+        guard let cardToShow else {
+            self.wordNameLabel.text = "no words to show"
+            return
+        }
+        self.wordNameLabel.text = cardToShow.wordName
+        self.tableView.reloadData()
     }
     
     private func isRight(answer: Int) -> Bool {
@@ -52,7 +52,10 @@ class TrainViewController: UIViewController {
 extension TrainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.cardToShow!.answers.count
+        guard let cardToShow else {
+            return 0
+        }
+        return cardToShow.answers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

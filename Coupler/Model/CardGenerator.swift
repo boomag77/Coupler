@@ -1,40 +1,41 @@
 import Foundation
-import UIKit
+//import UIKit
 
 class CardGenerator {
     
     
     var dictType: StorageType
-    var wordsToTrain: [WordModel]
+    var wordsToTrain: [WordModel]?
+    var storage = StorageManager()
     
-    
-    init(dictType: StorageType, words: [WordModel]) {
+    init(dictType: StorageType) {
         self.dictType = dictType
-        self.wordsToTrain = words
+        print("Card Generator initialized")
     }
         
     //private var wordsForTrain: [WordModel] = getWordsForTrain(from: storageType).shuffled()
     
     //func gets not memorized words from Storage and return them in array
-//    private func getWordsForTrain(from dictType: StorageType) {
-//        print("func getWordsToTrain started")
-//        //var wordsToTrain: [WordModel] = []
-//        var storage = StorageManager()
-//        print(storage)
-//        storage.getData(storage: dictType) { [weak self] words in
-//
-//            print("closure \(words)")
-//            self?.wordsToTrain = words
-//            print("!!! \(self?.wordsToTrain)")
-//
-//        }
-//    }
+    func getWordsForTrain(from dictType: StorageType) -> [WordModel] {
+        print("func getWordsToTrain started")
+        var wordsToTrain: [WordModel] = []
+        print(storage)
+        storage.getData(storage: dictType) { words in
+
+            print("closure \(words)")
+            wordsToTrain = words
+            print("!!! \(wordsToTrain)")
+
+        }
+        return wordsToTrain
+    }
     
     func generateCard() -> WordCard {
         
-        print("generateCard -----")
-        //getWordsForTrain(from: self.dictType)
-        let randomWord = self.wordsToTrain.randomElement()
+        print("func generateCard started")
+        let words = getWordsForTrain(from: .translation)
+        print(words)
+        let randomWord = words.randomElement()
         print(randomWord!)
         return createCard(for: randomWord!)
         

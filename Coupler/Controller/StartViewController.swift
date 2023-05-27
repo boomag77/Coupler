@@ -2,7 +2,7 @@
 import UIKit
 // View Buttons
 
-protocol DataStorageManager {
+protocol DataStorageManager: AnyObject {
     var dataRequester: DataRequester? {get set}
     func getData(storage: StorageType, completion: @escaping ([WordModel]) -> Void)
     func getStats(completion: @escaping (StorageStat) -> Void)
