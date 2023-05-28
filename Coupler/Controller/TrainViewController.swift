@@ -6,10 +6,6 @@ enum AnswerWas {
     case wrong
 }
 
-protocol CardGeneratorProtocol: AnyObject {
-    func generateCard(from dictType: StorageType) -> WordCard?
-}
-
 class TrainViewController: UIViewController {
     
     var dictType: StorageType?
@@ -22,6 +18,7 @@ class TrainViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        
         show()
         
     }
