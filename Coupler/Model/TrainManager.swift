@@ -4,8 +4,8 @@ import UIKit
 
 protocol TrainPresenter: UIViewController {
     //var dictType: StorageType? {get set}
-    //var cardToShow: WordCard? {get set}
-    func show(card: WordCard)
+    var cardToShow: WordCard? {get set}
+    func showCard()
 }
 
 class TrainManager {
@@ -22,8 +22,9 @@ class TrainManager {
         
         let cardGenerator = CardGenerator(dictType: self.dictType)
         let cardToShow = cardGenerator.generateCard()
+        presenter?.cardToShow = cardToShow
+        presenter?.showCard()
         
         
-        self.presenter?.show(card: cardToShow)
     }
 }

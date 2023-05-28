@@ -6,7 +6,7 @@ enum AnswerWas {
     case wrong
 }
 
-class TrainViewController: UIViewController {
+class TrainViewController: UIViewController, TrainPresenter {
     
     var dictType: StorageType?
     var cardToShow: WordCard?
@@ -18,28 +18,18 @@ class TrainViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
-        
-        show()
-        
+        let trainManager = TrainManager(dictType: self.dictType!)
+        trainManager.presenter = self
+        trainManager.train()
     }
     
-    private func getCardToShow() {
-        let cardGenerator = CardGenerator(dictType: self.dictType!)
-        self.cardToShow = cardGenerator.generateCard()
-    }
-    
-    func show() {
-        getCardToShow()
+    func showCard() {
         guard let cardToShow else {
-            self.wordNameLabel.text = "no words to show"
+            self.wordNameLabel.text = "no Word to show"
             return
         }
         self.wordNameLabel.text = cardToShow.wordName
         self.tableView.reloadData()
-    }
-    
-    private func markAnswer(as answerWas: AnswerWas) {
-        
     }
 
 }
