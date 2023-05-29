@@ -1,22 +1,20 @@
 import Foundation
-//import UIKit
 
 class CardGenerator {
     
-    
+    let countOfAnswersInCard: Int = 3
     var dictType: StorageType
-    var wordsToTrain: [WordModel]?
     var storage = StorageManager()
+    var emptyCard: WordCard // Card to show if there are no card to train by the request
     
     init(dictType: StorageType) {
         self.dictType = dictType
+        self.emptyCard = WordCard(wordName: "No words to train in \(self.dictType.rawValue)", answers: [])
         print("Card Generator initialized")
     }
-        
-    //private var wordsForTrain: [WordModel] = getWordsForTrain(from: storageType).shuffled()
     
     //func gets not memorized words from Storage and return them in array
-    func getWordsForTrain(from dictType: StorageType) -> [WordModel] {
+    private func getWordsForTrain(from dictType: StorageType) -> [WordModel]? {
         print("func getWordsToTrain started")
         var wordsToTrain: [WordModel] = []
         print(storage)
@@ -32,48 +30,55 @@ class CardGenerator {
     
     func generateCard() -> WordCard {
         
-        print("func generateCard started")
-        let words = getWordsForTrain(from: .translation)
-        print(words)
-        let randomWord = words.randomElement()
-        print(randomWord!)
-        return createCard(for: randomWord!)
+        let words = getWordsForTrain(from: self.dictType)
+        guard let words else {
+            return emptyCard
+        }
+        let randomWord = words.randomElement()!
+        let answers = getAnswers(for: randomWord, from: words)
+        return createCard(for: randomWord, with: answers)
         
+    }
+    
+    private func getAnswers(for word: WordModel, from words: [WordModel]) -> [Answer] {
+        
+        let rightAnswer = Answer(text: word.wordDescription, isRight: true)
+        var answersForWord = [rightAnswer]
+        switch words.count {
+        case 1:
+            // probably extension AI append wrong answers or other method to generate them
+            while answersForWord.count < countOfAnswersInCard {
+                answersForWord.append(rightAnswer)
+            }
+        case 2:
+            let wrongAnswer = Answer(
+                text: (words.filter{$0.wordDescription != rightAnswer.text})[0].wordDescription,
+                isRight: false)
+            while answersForWord.count < countOfAnswersInCard {
+                answersForWord.append(wrongAnswer)
+            }
+        default:
+            while answersForWord.count < countOfAnswersInCard {
+                let randomWord = words.randomElement()!
+                let addedAnswers = answersForWord.map { $0.text }
+                guard !addedAnswers.contains(randomWord.wordDescription) else {
+                    continue
+                }
+                let wrongAnswer = Answer(text: randomWord.wordDescription, isRight: false)
+                answersForWord.append(wrongAnswer)
+            }
+        }
+        
+        return answersForWord.shuffled()
     }
     
     /// create word Card (random word and 3 answers) and return it in array
     /// - Parameter word: Word to show in Card for training word.
+    /// - Parametr answers: Answers for word (one of them is right)
     /// - Returns: training word's card as word itself and 3 answers (one of them is right)
-    private func createCard(for word: WordModel) -> WordCard {
-        var answersForCard: [String] = [word.wordDescription]
-        //let cloudOfWrongAnswers = getAllAnswers(for: word.storage)
-        let cloudOfWrongAnswers = ["alt answer #2", "alt answer #3"]
-        answersForCard.append(cloudOfWrongAnswers[0])
-        answersForCard.append(cloudOfWrongAnswers[1])
-//        while answersForCard.count < 3 {
-//            if let answer = cloudOfWrongAnswers.randomElement() {
-//                answersForCard.append(answer)
-//            }
-//        }
-        let card = WordCard(wordName: word.name, answers: answersForCard)
+    private func createCard(for word: WordModel, with answers: [Answer]) -> WordCard {
+        let card = WordCard(wordName: word.name, answers: answers)
         return card
     }
-    
-    private func getAllAnswers(for storage: String) -> [String] {
-        //TODO
-        return []
-    }
-    
-    
-    
-    private func updateWordStats(for word: WordModel) {
-        // TODO
-        // here word saves to CoreData Storage with new stats (wasRight, wasWrong)
-    }
-    
-//    private func getRandomWord() -> WordModel? {
-//
-//        return self.wordsForTrain.randomElement()
-//    }
 }
 

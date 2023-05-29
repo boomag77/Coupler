@@ -9,5 +9,5 @@ import Foundation
 
 struct WordCard {
     var wordName: String
-    var answers: [String]
+    var answers: [Answer]
 }

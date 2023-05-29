@@ -1,15 +1,16 @@
 
 import UIKit
 
-enum AnswerWas {
-    case right
-    case wrong
-}
-
 class TrainViewController: UIViewController, TrainPresenter {
     
     var dictType: StorageType?
-    var cardToShow: WordCard?
+    var cardToShow: WordCard? {
+        didSet {
+            showCard()
+        }
+    }
+    var isAnswerSelected: Bool = false
+    
     
     @IBOutlet weak var wordNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -47,10 +48,22 @@ extension TrainViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell")
         var content = cell?.defaultContentConfiguration()
-        content?.text = cardToShow?.answers[indexPath.row]
+        content?.text = self.cardToShow?.answers[indexPath.row].text
+        if isAnswerSelected {
+            cell?.layer.borderWidth = 1
+        }
         cell?.contentConfiguration = content
         
         return cell!
     }
     
 }
+
+//extension TrainViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let selectedAnswer = cardToShow?.answers[indexPath.row]
+//        isAnswerSelected = true
+//        
+//        
+//    }
+//}

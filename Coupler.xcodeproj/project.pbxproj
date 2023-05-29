@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A5057B412A22847B004806CE /* TrainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5057B402A22847B004806CE /* TrainManager.swift */; };
+		A5057B432A251D0A004806CE /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5057B422A251D0A004806CE /* Answer.swift */; };
 		A5305F6A2A0DDDD700B30876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5305F682A0DDDD700B30876 /* Main.storyboard */; };
 		A5305F6C2A0DDE9400B30876 /* MeaningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5305F6B2A0DDE9400B30876 /* MeaningLabel.swift */; };
 		A5305F702A15BEDD00B30876 /* CardGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5305F6F2A15BEDD00B30876 /* CardGenerator.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		A5057B402A22847B004806CE /* TrainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainManager.swift; sourceTree = "<group>"; };
+		A5057B422A251D0A004806CE /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		A5305F692A0DDDD700B30876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5305F6B2A0DDE9400B30876 /* MeaningLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeaningLabel.swift; sourceTree = "<group>"; };
 		A5305F6F2A15BEDD00B30876 /* CardGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGenerator.swift; sourceTree = "<group>"; };
@@ -98,9 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				A584A5FC29DDFCFD008D08AB /* WordModel.swift */,
+				A5057B422A251D0A004806CE /* Answer.swift */,
+				A5305F712A171F4800B30876 /* WordCard.swift */,
 				A584A5FE29DE04C3008D08AB /* StorageManager.swift */,
 				A5305F6F2A15BEDD00B30876 /* CardGenerator.swift */,
-				A5305F712A171F4800B30876 /* WordCard.swift */,
 				A5057B402A22847B004806CE /* TrainManager.swift */,
 			);
 			path = Model;
@@ -209,6 +212,7 @@
 				A5305F6C2A0DDE9400B30876 /* MeaningLabel.swift in Sources */,
 				A5673EE329F16F2200D060C9 /* WordCell.swift in Sources */,
 				A584A5FF29DE04C3008D08AB /* StorageManager.swift in Sources */,
+				A5057B432A251D0A004806CE /* Answer.swift in Sources */,
 				A5057B412A22847B004806CE /* TrainManager.swift in Sources */,
 				A5305F702A15BEDD00B30876 /* CardGenerator.swift in Sources */,
 				A5D25B4529CDFF90003F6C7A /* Coupler.xcdatamodeld in Sources */,
