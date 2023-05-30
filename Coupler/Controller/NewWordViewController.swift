@@ -11,15 +11,15 @@ class NewWordViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     
     var storage: DataStorageManager?
-    var editingWord: WordModel?
+    var wordBeforeEdition: WordModel?
     var saveButtonPressed: ((WordModel) -> Void)?
     var delegate: ChildViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let editingWord {
-            self.newWordTextField.text = editingWord.name
-            self.meaningTextField.text = editingWord.wordDescription
+        if let wordBeforeEdition {
+            self.newWordTextField.text = wordBeforeEdition.name
+            self.meaningTextField.text = wordBeforeEdition.wordDescription
         }
     }
     
@@ -42,13 +42,13 @@ class NewWordViewController: UIViewController {
                                 wordDescription: description,
                                 storage: "translation"
         )
-        guard let editingWord else {
+        guard let wordBeforeEdition else {
             storage?.addNew(word: newWord)
             
             self.dismiss(animated: true)
             return
         }
-        self.storage?.edit(editingWord: editingWord, editedWord: newWord)
+        self.storage?.edit(wordBeforeEdition: wordBeforeEdition, wordAfterEdition: newWord)
         
         self.dismiss(animated: true)
     }
@@ -63,13 +63,13 @@ class NewWordViewController: UIViewController {
                                 wordDescription: description,
                                 storage: "glossary"
         )
-        guard let editingWord else {
+        guard let wordBeforeEdition else {
             storage?.addNew(word: newWord)
             self.dismiss(animated: true)
             return
         }
         
-        self.storage?.edit(editingWord: editingWord, editedWord: newWord)
+        self.storage?.edit(wordBeforeEdition: wordBeforeEdition, wordAfterEdition: newWord)
         self.dismiss(animated: true)
     }
 

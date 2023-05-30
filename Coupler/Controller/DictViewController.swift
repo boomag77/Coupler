@@ -155,7 +155,7 @@ extension DictViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let word = dict[indexPath.row]
         let actionEdit = UIContextualAction(style: .normal, title: nil) { _,_,_ in
-            self.showEditForm(editingWord: word)
+            self.showEditForm(wordBeforeEdition: word)
         }
         
         actionEdit.backgroundColor = .systemGreen
@@ -180,14 +180,14 @@ extension DictViewController: DataRequester {
 }
 
 extension DictViewController {
-    private func showEditForm(editingWord: WordModel) {
+    private func showEditForm(wordBeforeEdition: WordModel) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let editVC = sb.instantiateViewController(withIdentifier: "NewWordViewController") as! NewWordViewController
         editVC.storage = self.storage
-        editVC.editingWord = editingWord
-        editVC.saveButtonPressed = { [weak self] editedWord in
+        editVC.wordBeforeEdition = wordBeforeEdition
+        editVC.saveButtonPressed = { [weak self] wordAfterEdition in
             
-            self?.storage.edit(editingWord: editingWord, editedWord: editedWord)
+            self?.storage.edit(wordBeforeEdition: wordBeforeEdition, wordAfterEdition: wordAfterEdition)
             self?.dismiss(animated: true)
         }
         present(editVC, animated: true)

@@ -13,7 +13,7 @@ protocol DataStorageManager: AnyObject {
     func addNew(word: WordModel)
     //func isExist(wordName: String, completion: @escaping (WordModel?) -> Void)
     func delete(_ word: WordModel)
-    func edit(editingWord: WordModel, editedWord: WordModel)
+    func edit(wordBeforeEdition: WordModel, wordAfterEdition: WordModel)
 }
 
 class StartViewController: UIViewController, ChildViewControllerDelegate {

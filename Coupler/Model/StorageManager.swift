@@ -140,31 +140,31 @@ class StorageManager: DataStorageManager {
         
     }
     
-    func edit(editingWord: WordModel, editedWord: WordModel) {
+    func edit(wordBeforeEdition: WordModel, wordAfterEdition: WordModel) {
         var namesIsTheSame: Bool = false
         
-        isExist(wordName: editedWord.name) { existingWord in
+        isExist(wordName: wordAfterEdition.name) { existingWord in
             if let _ = existingWord {
                 namesIsTheSame = true
             }
         }
         
         if namesIsTheSame {
-            guard editingWord.wordDescription == editedWord.wordDescription else {
+            guard wordBeforeEdition.wordDescription == wordAfterEdition.wordDescription else {
                 // actions if descriptions are different
-                var wordToSave = editingWord
-                let newDescription = editedWord.wordDescription
+                var wordToSave = wordBeforeEdition
+                let newDescription = wordAfterEdition.wordDescription
                 wordToSave.wordDescription = newDescription
                 print(wordToSave.wordDescription)
-                if editingWord.storage == editedWord.storage {
+                if wordBeforeEdition.storage == wordAfterEdition.storage {
                     // actions if storageies are the same
-                    self.delete(editingWord)
+                    self.delete(wordBeforeEdition)
                     self.addNew(word: wordToSave)
                     
                 } else {
-                    var wordToSave = editingWord
-                    wordToSave.storage = editedWord.storage
-                    self.delete(editingWord)
+                    var wordToSave = wordBeforeEdition
+                    wordToSave.storage = wordAfterEdition.storage
+                    self.delete(wordBeforeEdition)
                     self.addNew(word: wordToSave)
                     
                     // actions if only storagies are different
@@ -172,11 +172,11 @@ class StorageManager: DataStorageManager {
                 }
                 return
             }
-            if editingWord.storage == editedWord.storage {
-                guard editedWord.wasRight == editingWord.wasRight,
-                      editedWord.wasWrong == editingWord.wasWrong else {
-                    let wordToSave = editedWord
-                    self.delete(editingWord)
+            if wordBeforeEdition.storage == wordAfterEdition.storage {
+                guard wordAfterEdition.wasRight == wordBeforeEdition.wasRight,
+                      wordAfterEdition.wasWrong == wordBeforeEdition.wasWrong else {
+                    let wordToSave = wordAfterEdition
+                    self.delete(wordBeforeEdition)
                     self.addNew(word: wordToSave)
                     self.dataRequester?.updateData()
                     return
@@ -184,14 +184,14 @@ class StorageManager: DataStorageManager {
                 self.dataRequester?.updateData()
                 
             } else {
-                var wordToSave = editingWord
-                wordToSave.storage = editedWord.storage
-                self.delete(editingWord)
+                var wordToSave = wordBeforeEdition
+                wordToSave.storage = wordAfterEdition.storage
+                self.delete(wordBeforeEdition)
                 self.addNew(word: wordToSave)
             }
         } else {
-            self.delete(editingWord)
-            self.addNew(word: editedWord)
+            self.delete(wordBeforeEdition)
+            self.addNew(word: wordAfterEdition)
         }
     }
     
