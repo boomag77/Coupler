@@ -16,6 +16,7 @@ class DictViewController: UIViewController {
     @IBOutlet weak var sortingControlLabel: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
+    var delegate: ChildViewControllerDelegate?
     var dict: [WordModel] = []
     var storage: DataStorageManager = StorageManager()
     var dictType: StorageType?
@@ -40,6 +41,10 @@ class DictViewController: UIViewController {
         self.updateData()
         tableView.delegate = self
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.childViewControllerDidiDismissed()
     }
     
     @IBAction func closeButtonPresent(_ sender: UIButton) {

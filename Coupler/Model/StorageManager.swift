@@ -20,7 +20,11 @@ class StorageManager: DataStorageManager {
         self.managedContext = appDelegate.persistentContainer.viewContext
     }
     
-    weak var dataRequester: DataRequester?
+    weak var dataRequester: DataRequester? {
+        didSet {
+            dataRequester?.updateData()
+        }
+    }
     let appDelegate: AppDelegate
     let managedContext: NSManagedObjectContext
     
@@ -42,22 +46,22 @@ class StorageManager: DataStorageManager {
     func getStats(completion: @escaping (StorageStat) -> Void) {
         var stat = StorageStat(translationCount: 0, glossaryCount: 0)
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "WordEntity")
-        DispatchQueue.main.async {
-            do {
-                let predicate1 = NSPredicate(format: "storage == %@", "translation")
-                fetchRequest.predicate = predicate1
-                stat.translationCount = try self.managedContext.count(for: fetchRequest)
-                let predicate2 = NSPredicate(format: "storage == %@", "glossary")
-                fetchRequest.predicate = predicate2
-                stat.glossaryCount = try self.managedContext.count(for: fetchRequest)
-                completion(stat)
-            } catch let error as NSError {
-                print("Could not fetch for count. \(error), \(error.userInfo)")
-                stat.glossaryCount = 0
-                stat.translationCount = 0
-                completion(stat)
-            }
+        
+        do {
+            let predicate1 = NSPredicate(format: "storage == %@", "translation")
+            fetchRequest.predicate = predicate1
+            stat.translationCount = try self.managedContext.count(for: fetchRequest)
+            let predicate2 = NSPredicate(format: "storage == %@", "glossary")
+            fetchRequest.predicate = predicate2
+            stat.glossaryCount = try self.managedContext.count(for: fetchRequest)
+            completion(stat)
+        } catch let error as NSError {
+            print("Could not fetch for count. \(error), \(error.userInfo)")
+            stat.glossaryCount = 0
+            stat.translationCount = 0
+            completion(stat)
         }
+        
     }
     
     
@@ -202,7 +206,6 @@ class StorageManager: DataStorageManager {
                 self.managedContext.delete(object.first!)
             }
             try self.managedContext.save()
-            
         } catch let error as NSError {
             print("Could not fetch or delete object. \(error), \(error.userInfo)")
         }

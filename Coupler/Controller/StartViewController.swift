@@ -2,6 +2,10 @@
 import UIKit
 // View Buttons
 
+protocol ChildViewControllerDelegate: AnyObject {
+    func childViewControllerDidiDismissed()
+}
+
 protocol DataStorageManager: AnyObject {
     var dataRequester: DataRequester? {get set}
     func getData(storage: StorageType, completion: @escaping ([WordModel]) -> Void)
@@ -12,7 +16,7 @@ protocol DataStorageManager: AnyObject {
     func edit(editingWord: WordModel, editedWord: WordModel)
 }
 
-class StartViewController: UIViewController {
+class StartViewController: UIViewController, ChildViewControllerDelegate {
     
     @IBOutlet weak var dictionaryLabel: UILabel!
     @IBOutlet weak var glossaryLabel: UILabel!
@@ -40,11 +44,15 @@ class StartViewController: UIViewController {
         attributeButton(glossaryTrainButton)
         
         self.storage.dataRequester = self
-        self.updateData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.updateData()
+    }
+    
+    
+    func childViewControllerDidiDismissed() {
+        viewWillAppear(false)
     }
     
     private func attributeView(_ label: UIView) {
@@ -65,12 +73,10 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func translationViewButtonPressed(_ sender: UIButton) {
-        //dismiss(animated: true)
         self.showDictionary(with: .translation)
     }
     
     @IBAction func glossaryViewButtonPressed(_ sender: UIButton) {
-        //dismiss(animated: true)
         self.showDictionary(with: .glossary)
     }
     
@@ -78,6 +84,7 @@ class StartViewController: UIViewController {
         let trainVC = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(identifier: "TrainViewController") as! TrainViewController
         trainVC.dictType = .translation
+        trainVC.delegate = self
         present(trainVC, animated: true)
         
     }
@@ -86,6 +93,7 @@ class StartViewController: UIViewController {
         let trainVC = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(identifier: "TrainViewController") as! TrainViewController
         trainVC.dictType = .glossary
+        trainVC.delegate = self
         present(trainVC, animated: true)
     }
     
@@ -93,23 +101,27 @@ class StartViewController: UIViewController {
         let dictViewVC = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "DictViewController") as! DictViewController
         dictViewVC.dictType = dictType
+        dictViewVC.delegate = self
         present(dictViewVC, animated: true)
     }
     
     private func showAddNewWordForm() {
         let addNewWordVC = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(identifier: "NewWordViewController") as! NewWordViewController
+        addNewWordVC.delegate = self
         addNewWordVC.storage = self.storage
         present(addNewWordVC, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    @IBAction func addNewButtonPressed(_ sender: UIButton) {
+        self.showAddNewWordForm()
     }
+    
 }
 
 extension StartViewController: DataRequester {
     func updateData() {
+        print("startVC - update")
         storage.getStats() { stat in
             self.dictionaryLabel.text = "Translation: \(stat.translationCount)"
             self.glossaryLabel.text = "Glossary: \(stat.glossaryCount)"

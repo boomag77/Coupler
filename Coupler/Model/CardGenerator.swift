@@ -14,15 +14,14 @@ class CardGenerator {
     }
     
     //func gets not memorized words from Storage and return them in array
-    private func getWordsForTrain(from dictType: StorageType) -> [WordModel]? {
+    private func getWordsForTrain(from dictType: StorageType) -> [WordModel] {
+        
         print("func getWordsToTrain started")
         var wordsToTrain: [WordModel] = []
-        print(storage)
+        
         storage.getData(storage: dictType) { words in
 
-            print("closure \(words)")
             wordsToTrain = words
-            print("!!! \(wordsToTrain)")
 
         }
         return wordsToTrain
@@ -31,7 +30,7 @@ class CardGenerator {
     func generateCard() -> WordCard {
         
         let words = getWordsForTrain(from: self.dictType)
-        guard let words else {
+        guard words.count > 0 else {
             return emptyCard
         }
         let randomWord = words.randomElement()!

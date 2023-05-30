@@ -3,6 +3,7 @@ import UIKit
 
 class TrainViewController: UIViewController, TrainPresenter {
     
+    var delegate: ChildViewControllerDelegate?
     var dictType: StorageType?
     var cardToShow: WordCard? {
         didSet {
@@ -22,6 +23,10 @@ class TrainViewController: UIViewController, TrainPresenter {
         let trainManager = TrainManager(dictType: self.dictType!)
         trainManager.presenter = self
         trainManager.train()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.childViewControllerDidiDismissed()
     }
     
     func showCard() {

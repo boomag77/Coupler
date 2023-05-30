@@ -13,6 +13,7 @@ class NewWordViewController: UIViewController {
     var storage: DataStorageManager?
     var editingWord: WordModel?
     var saveButtonPressed: ((WordModel) -> Void)?
+    var delegate: ChildViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,10 @@ class NewWordViewController: UIViewController {
             self.newWordTextField.text = editingWord.name
             self.meaningTextField.text = editingWord.wordDescription
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.childViewControllerDidiDismissed()
     }
     
     @IBAction func closeView(_ sender: Any) {
@@ -39,10 +44,12 @@ class NewWordViewController: UIViewController {
         )
         guard let editingWord else {
             storage?.addNew(word: newWord)
+            
             self.dismiss(animated: true)
             return
         }
         self.storage?.edit(editingWord: editingWord, editedWord: newWord)
+        
         self.dismiss(animated: true)
     }
     

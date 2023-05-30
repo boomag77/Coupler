@@ -313,6 +313,7 @@ SWIFT_CLASS("_TtC7Coupler18DictViewController")
 @property (nonatomic, weak) IBOutlet UISegmentedControl * _Null_unspecified sortingControlLabel;
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
 - (void)viewDidLoad;
+- (void)viewWillDisappear:(BOOL)animated;
 - (IBAction)closeButtonPresent:(UIButton * _Nonnull)sender;
 - (IBAction)sortConditionSelected:(UISegmentedControl * _Nonnull)sender;
 - (IBAction)sortConditionPressed:(UISegmentedControl * _Nonnull)sender;
@@ -357,6 +358,7 @@ SWIFT_CLASS("_TtC7Coupler21NewWordViewController")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified glossaryButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified cancelButton;
 - (void)viewDidLoad;
+- (void)viewWillDisappear:(BOOL)animated;
 - (IBAction)closeView:(id _Nonnull)sender;
 - (IBAction)addToDictionaryWithSender:(UIButton * _Nonnull)sender;
 - (IBAction)addToGlossaryWithSender:(UIButton * _Nonnull)sender;
@@ -380,7 +382,6 @@ SWIFT_CLASS("_TtC7Coupler13SceneDelegate")
 @end
 
 @class UIView;
-@class UIStoryboardSegue;
 
 SWIFT_CLASS("_TtC7Coupler19StartViewController")
 @interface StartViewController : UIViewController
@@ -400,7 +401,7 @@ SWIFT_CLASS("_TtC7Coupler19StartViewController")
 - (IBAction)glossaryViewButtonPressed:(UIButton * _Nonnull)sender;
 - (IBAction)translationTrainButtonPressed:(UIButton * _Nonnull)sender;
 - (IBAction)glossaryTrainButtonPressed:(UIButton * _Nonnull)sender;
-- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (IBAction)addNewButtonPressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
