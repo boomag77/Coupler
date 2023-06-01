@@ -43,7 +43,7 @@ class NewWordViewController: UIViewController {
                                 storage: "translation"
         )
         guard let wordBeforeEdition else {
-            storage?.addNew(word: newWord)
+            storage?.saveNew(word: newWord)
             
             self.dismiss(animated: true)
             return
@@ -64,7 +64,7 @@ class NewWordViewController: UIViewController {
                                 storage: "glossary"
         )
         guard let wordBeforeEdition else {
-            storage?.addNew(word: newWord)
+            storage?.saveNew(word: newWord)
             self.dismiss(animated: true)
             return
         }

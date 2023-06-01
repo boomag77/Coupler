@@ -8,9 +8,9 @@ protocol ChildViewControllerDelegate: AnyObject {
 
 protocol DataStorageManager: AnyObject {
     var dataRequester: DataRequester? {get set}
-    func getData(storage: DictType, completion: @escaping ([WordModel]) -> Void)
+    func getData(for dict: DictType, completion: @escaping ([WordModel]) -> Void)
     func getStats(completion: @escaping (StorageStat) -> Void)
-    func addNew(word: WordModel)
+    func saveNew(word: WordModel)
     //func isExist(wordName: String, completion: @escaping (WordModel?) -> Void)
     func delete(_ word: WordModel)
     func edit(wordBeforeEdition: WordModel, wordAfterEdition: WordModel)
@@ -107,14 +107,14 @@ class StartViewController: UIViewController, ChildViewControllerDelegate {
     }
     
     private func showAddNewWordForm() {
-        let addNewWordVC = UIStoryboard(name: "Main", bundle: nil)
+        let saveNewWordVC = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(identifier: "NewWordViewController") as! NewWordViewController
-        addNewWordVC.delegate = self
-        addNewWordVC.storage = self.storage
-        present(addNewWordVC, animated: true)
+        saveNewWordVC.delegate = self
+        saveNewWordVC.storage = self.storage
+        present(saveNewWordVC, animated: true)
     }
     
-    @IBAction func addNewButtonPressed(_ sender: UIButton) {
+    @IBAction func saveNewButtonPressed(_ sender: UIButton) {
         self.showAddNewWordForm()
     }
     

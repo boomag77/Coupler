@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,7 +13,7 @@
             <objects>
                 <viewController storyboardIdentifier="NewWordViewController" id="ine-fH-WMe" customClass="NewWordViewController" customModule="Coupler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mjA-9M-T54">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="9xE-8W-TnJ">
@@ -256,7 +255,7 @@
                                                 <rect key="frame" x="20" y="51" width="353" height="456"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WordCell" translatesAutoresizingMaskIntoConstraints="NO" id="Z8H-ZQ-e5F" customClass="WordCell" customModule="Coupler" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WordCell" translatesAutoresizingMaskIntoConstraints="NO" id="Z8H-ZQ-e5F" customClass="WordCell" customModule="Coupler" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="50" width="353" height="43.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z8H-ZQ-e5F" id="hSG-mI-Ryo">
@@ -708,7 +707,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="plus_button_darkbckgrnd"/>
                                         <connections>
-                                            <action selector="addNewButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mXl-19-HVA"/>
+                                            <action selector="saveNewButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mXl-19-HVA"/>
                                         </connections>
                                     </button>
                                 </subviews>
