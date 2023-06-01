@@ -59,6 +59,11 @@ struct WordModel {
         guard trainedCount > 19 && complexity < 5 else { return false }
         return true
     }
+    
+    private func saveChanges() {
+        let storage = StorageManager()
+        
+    }
 }
 
 

@@ -401,7 +401,7 @@ SWIFT_CLASS("_TtC7Coupler19StartViewController")
 - (IBAction)glossaryViewButtonPressed:(UIButton * _Nonnull)sender;
 - (IBAction)translationTrainButtonPressed:(UIButton * _Nonnull)sender;
 - (IBAction)glossaryTrainButtonPressed:(UIButton * _Nonnull)sender;
-- (IBAction)addNewButtonPressed:(UIButton * _Nonnull)sender;
+- (IBAction)saveNewButtonPressed:(UIButton * _Nonnull)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end

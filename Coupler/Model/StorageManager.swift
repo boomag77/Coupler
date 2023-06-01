@@ -73,7 +73,6 @@ class StorageManager: DataStorageManager {
         
     }
     
-    
     /// perform the closure with an array of words from CoreData Storage by predicted dictionary type
     /// - Parameters:
     ///   - dict: dictionary type: translaition or glossary
@@ -92,14 +91,13 @@ class StorageManager: DataStorageManager {
             
             let entities = try self.managedContext.fetch(fetchRequest)
             let words = self.transformToWordModel(entities: entities)
-            print("from completion - \(words)")
+            //print("from completion - \(words)")
             completion(words)
             
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
             completion([])
         }
-        
     }
     
     private func isExist(wordName: String, completion: @escaping (WordModel?) -> Void) {
@@ -121,7 +119,6 @@ class StorageManager: DataStorageManager {
         }
     }
     
-    
     /// save new Word to CoreData storage
     /// - Parameter word: new Word as WordModel
     func saveNew(word: WordModel) {
@@ -142,21 +139,28 @@ class StorageManager: DataStorageManager {
             print("Could not save.\(error), \(error.userInfo)")
         }
         
-        print("Word \(word.name) added to \(word.storage)")
+        //print("Word \(word.name) added to \(word.storage)")
         self.dataRequester?.updateData()
         
     }
-    
-    
-    
+   
     /// perform Word edition in CoreData storage
     /// - Parameters:
     ///   - wordBeforeEdition: old (existed) edition of the word
     ///   - wordAfterEdition: new edition of the word
     func edit(wordBeforeEdition: WordModel, wordAfterEdition: WordModel) {
         
+        guard wordBeforeEdition.name == wordAfterEdition.name else {
+            self.delete(wordBeforeEdition)
+            self.saveNew(word: wordAfterEdition)
+            return
+        }
+        
+        let nameOfEditingWord: String = wordBeforeEdition.name
+        let labelName = "name"
+        
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "WordEntity")
-        let predicate = NSPredicate(format: "name == %@", wordBeforeEdition.name)
+        let predicate = NSPredicate(format: "\(labelName) == %@", nameOfEditingWord)
         fetchRequest.predicate = predicate
         
         do {
@@ -164,28 +168,24 @@ class StorageManager: DataStorageManager {
             
             if let objectToEdit = result.first {
                 
-                guard objectToEdit.value(forKey: "name") as? String == wordAfterEdition.name else {
-                    self.delete(wordBeforeEdition)
-                    self.saveNew(word: wordAfterEdition)
-                    return
-                }
-                
                 let mirrorAfter = Mirror(reflecting: wordAfterEdition)
                 
                 for (label,value) in mirrorAfter.children {
                     if let label = label {
+                        if label == labelName { continue }
                         objectToEdit.setValue(value, forKey: label)
                     }
                 }
                 try managedContext.save()
+            } else {
+                
             }
             
         } catch let error as NSError {
             print("Could not edit. \(error), \(error.localizedDescription)")
         }
         
-        dataRequester?.updateData()
-        
+        self.dataRequester?.updateData()
     }
     
     /// perform erasing a word from CoreData storage if this word is existing in CoreData storage
@@ -205,7 +205,14 @@ class StorageManager: DataStorageManager {
         } catch let error as NSError {
             print("Could not fetch or delete object. \(error), \(error.localizedDescription)")
         }
+        
         self.dataRequester?.updateData()
+        
+    }
+    
+    func updateExisting(_ word: WordModel) {
+        
+        
         
     }
 }

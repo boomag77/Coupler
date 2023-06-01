@@ -19,7 +19,7 @@ class CardGenerator {
         print("func getWordsToTrain started")
         var wordsToTrain: [WordModel] = []
         
-        storage.getData(storage: dictType) { words in
+        storage.getData(for: dictType) { words in
 
             wordsToTrain = words
 

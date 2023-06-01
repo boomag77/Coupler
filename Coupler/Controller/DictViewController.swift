@@ -170,7 +170,7 @@ extension DictViewController: UITableViewDelegate {
 extension DictViewController: DataRequester {
     func updateData() {
         guard let dictType else {return}
-        storage.getData(storage: dictType) { words in
+        storage.getData(for: dictType) { words in
             self.dict = words
             self.updateTitle()
             self.tableView.reloadData()
