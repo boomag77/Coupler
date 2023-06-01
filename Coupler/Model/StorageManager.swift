@@ -35,7 +35,7 @@ class StorageManager: DataStorageManager {
                       storage: $0.value(forKey: "storage") as? String ?? "",
                       wasRight: $0.value(forKey: "wasRight") as? Int64,
                       wasWrong: $0.value(forKey: "wasWrong") as? Int64,
-                      dateOfAdd: $0.value(forKey: "addedDate") as? String
+                      dateOfAdd: $0.value(forKey: "dateOfAdd") as? String
                     )
             
             
@@ -65,7 +65,7 @@ class StorageManager: DataStorageManager {
     }
     
     
-    func getData(storage: StorageType, completion: @escaping ([WordModel]) -> Void) {
+    func getData(storage: DictType, completion: @escaping ([WordModel]) -> Void) {
         
         var predicate: NSPredicate {
             return storage == .translation ?
@@ -113,86 +113,67 @@ class StorageManager: DataStorageManager {
         
         let entity = NSEntityDescription.entity(forEntityName: "WordEntity", in: managedContext)!
         let newWord = NSManagedObject(entity: entity, insertInto: managedContext)
-        newWord.setValue(word.name, forKeyPath: "name")
-        newWord.setValue(word.wordDescription, forKeyPath: "wordDescription")
-        newWord.setValue(word.storage, forKeyPath: "storage")
-        newWord.setValue(word.dateOfAdd, forKeyPath: "addedDate")
-        newWord.setValue(word.wasRight, forKey: "wasRight")
-        newWord.setValue(word.wasWrong, forKey: "wasWrong")
         
+        let mirrorNewWord = Mirror(reflecting: word)
         
-        switch word.storage {
-            case "translation":
-                do {
-                    try self.managedContext.save()
-                } catch let error as NSError {
-                    print("Could not save.\(error), \(error.userInfo)")
-                }
-            default:
-                do {
-                    try self.managedContext.save()
-                } catch let error as NSError {
-                    print("Could not save.\(error), \(error.userInfo)")
-                }
+        for (label,value) in mirrorNewWord.children {
+            if let label = label {
+                newWord.setValue(value, forKey: label)
+            }
         }
+        do {
+            try self.managedContext.save()
+        } catch let error as NSError {
+            print("Could not save.\(error), \(error.userInfo)")
+        }
+        
         print("Word \(word.name) added to \(word.storage)")
         self.dataRequester?.updateData()
         
     }
     
+    
+    
+    /// perform edition of Word in CoreData storage
+    /// - Parameters:
+    ///   - wordBeforeEdition: old (existed) edition of the word
+    ///   - wordAfterEdition: new edition of the word
     func edit(wordBeforeEdition: WordModel, wordAfterEdition: WordModel) {
-        var namesIsTheSame: Bool = false
         
-        isExist(wordName: wordAfterEdition.name) { existingWord in
-            if let _ = existingWord {
-                namesIsTheSame = true
-            }
-        }
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "WordEntity")
+        let predicate = NSPredicate(format: "name == %@", wordBeforeEdition.name)
+        fetchRequest.predicate = predicate
         
-        if namesIsTheSame {
-            guard wordBeforeEdition.wordDescription == wordAfterEdition.wordDescription else {
-                // actions if descriptions are different
-                var wordToSave = wordBeforeEdition
-                let newDescription = wordAfterEdition.wordDescription
-                wordToSave.wordDescription = newDescription
-                print(wordToSave.wordDescription)
-                if wordBeforeEdition.storage == wordAfterEdition.storage {
-                    // actions if storageies are the same
+        do {
+            let result = try self.managedContext.fetch(fetchRequest)
+            
+            if let objectToEdit = result.first {
+                
+                guard objectToEdit.value(forKey: "name") as? String == wordAfterEdition.name else {
                     self.delete(wordBeforeEdition)
-                    self.addNew(word: wordToSave)
-                    
-                } else {
-                    var wordToSave = wordBeforeEdition
-                    wordToSave.storage = wordAfterEdition.storage
-                    self.delete(wordBeforeEdition)
-                    self.addNew(word: wordToSave)
-                    
-                    // actions if only storagies are different
-                    
-                }
-                return
-            }
-            if wordBeforeEdition.storage == wordAfterEdition.storage {
-                guard wordAfterEdition.wasRight == wordBeforeEdition.wasRight,
-                      wordAfterEdition.wasWrong == wordBeforeEdition.wasWrong else {
-                    let wordToSave = wordAfterEdition
-                    self.delete(wordBeforeEdition)
-                    self.addNew(word: wordToSave)
-                    self.dataRequester?.updateData()
+                    self.addNew(word: wordAfterEdition)
                     return
                 }
-                self.dataRequester?.updateData()
                 
-            } else {
-                var wordToSave = wordBeforeEdition
-                wordToSave.storage = wordAfterEdition.storage
-                self.delete(wordBeforeEdition)
-                self.addNew(word: wordToSave)
+                let mirrorAfter = Mirror(reflecting: wordAfterEdition)
+                
+                for (label,value) in mirrorAfter.children {
+                    if let label = label {
+                        objectToEdit.setValue(value, forKey: label)
+                    }
+                    
+                }
+                
+                try managedContext.save()
+                dataRequester?.updateData()
             }
-        } else {
-            self.delete(wordBeforeEdition)
-            self.addNew(word: wordAfterEdition)
+            
+        } catch let error as NSError {
+            print("Could not edit. \(error), \(error.localizedDescription)")
         }
+        
+        
+        
     }
     
     func delete(_ word: WordModel) {

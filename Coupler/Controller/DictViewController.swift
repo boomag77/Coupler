@@ -19,7 +19,7 @@ class DictViewController: UIViewController {
     var delegate: ChildViewControllerDelegate?
     var dict: [WordModel] = []
     var storage: DataStorageManager = StorageManager()
-    var dictType: StorageType?
+    var dictType: DictType?
     lazy var memorizedCount = {
         var count = 0
         for word in dict {
@@ -40,7 +40,6 @@ class DictViewController: UIViewController {
         )
         self.updateData()
         tableView.delegate = self
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -194,3 +193,4 @@ extension DictViewController {
         tableView.reloadData()
     }
 }
+

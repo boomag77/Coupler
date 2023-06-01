@@ -8,7 +8,7 @@ protocol ChildViewControllerDelegate: AnyObject {
 
 protocol DataStorageManager: AnyObject {
     var dataRequester: DataRequester? {get set}
-    func getData(storage: StorageType, completion: @escaping ([WordModel]) -> Void)
+    func getData(storage: DictType, completion: @escaping ([WordModel]) -> Void)
     func getStats(completion: @escaping (StorageStat) -> Void)
     func addNew(word: WordModel)
     //func isExist(wordName: String, completion: @escaping (WordModel?) -> Void)
@@ -44,6 +44,7 @@ class StartViewController: UIViewController, ChildViewControllerDelegate {
         attributeButton(glossaryTrainButton)
         
         self.storage.dataRequester = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,7 +98,7 @@ class StartViewController: UIViewController, ChildViewControllerDelegate {
         present(trainVC, animated: true)
     }
     
-    private func showDictionary(with dictType: StorageType) {
+    private func showDictionary(with dictType: DictType) {
         let dictViewVC = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "DictViewController") as! DictViewController
         dictViewVC.dictType = dictType

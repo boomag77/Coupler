@@ -3,18 +3,18 @@ import Foundation
 class CardGenerator {
     
     let countOfAnswersInCard: Int = 3
-    var dictType: StorageType
+    var dictType: DictType
     var storage = StorageManager()
     var emptyCard: WordCard // Card to show if there are no card to train by the request
     
-    init(dictType: StorageType) {
+    init(dictType: DictType) {
         self.dictType = dictType
         self.emptyCard = WordCard(wordName: "No words to train in \(self.dictType.rawValue)", answers: [])
         print("Card Generator initialized")
     }
     
     //func gets not memorized words from Storage and return them in array
-    private func getWordsForTrain(from dictType: StorageType) -> [WordModel] {
+    private func getWordsForTrain(from dictType: DictType) -> [WordModel] {
         
         print("func getWordsToTrain started")
         var wordsToTrain: [WordModel] = []

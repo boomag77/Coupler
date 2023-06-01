@@ -449,8 +449,8 @@ SWIFT_CLASS_NAMED("WordEntity")
 
 
 @interface WordEntity (SWIFT_EXTENSION(Coupler))
-@property (nonatomic, copy) NSString * _Nullable addedDate;
 @property (nonatomic) float complexity;
+@property (nonatomic, copy) NSString * _Nullable dateOfAdd;
 @property (nonatomic) BOOL memorized;
 @property (nonatomic, copy) NSString * _Nullable name;
 @property (nonatomic, copy) NSString * _Nullable storage;

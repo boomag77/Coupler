@@ -9,9 +9,9 @@ protocol TrainPresenter: UIViewController {
 class TrainManager {
     
     var presenter: TrainPresenter?
-    var dictType: StorageType
+    var dictType: DictType
     
-    init(dictType: StorageType) {
+    init(dictType: DictType) {
         self.dictType = dictType
     }
     

@@ -2,7 +2,7 @@
 //  WordEntity+CoreDataProperties.swift
 //  
 //
-//  Created by Sergey on 5/17/23.
+//  Created by Sergey on 5/31/23.
 //
 //  This file was automatically generated and should not be edited.
 //
@@ -17,8 +17,8 @@ extension WordEntity {
         return NSFetchRequest<WordEntity>(entityName: "WordEntity")
     }
 
-    @NSManaged public var addedDate: String?
     @NSManaged public var complexity: Float
+    @NSManaged public var dateOfAdd: String?
     @NSManaged public var memorized: Bool
     @NSManaged public var name: String?
     @NSManaged public var storage: String?

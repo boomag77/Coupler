@@ -1,10 +1,11 @@
 
 import Foundation
 
-enum StorageType: String {
+enum DictType: String {
     case translation = "translation"
     case glossary = "glossary"
 }
+
 
 struct WordModel {
     
@@ -44,15 +45,7 @@ struct WordModel {
     var name: String
     var wordDescription: String
     var storage: String
-    var dateOfAdd: String?
-//    {
-//        let dateFormat = DateFormatter()
-//        dateFormat.locale = Locale.current
-//        dateFormat.dateStyle = .medium
-//        dateFormat.timeStyle = .none
-//        let date = Date()
-//        return dateFormat.string(from: date)
-//    }
+    var dateOfAdd: String
     var wasRight: Int64
     var wasWrong: Int64
     var trainedCount: Int64 {
@@ -67,3 +60,5 @@ struct WordModel {
         return true
     }
 }
+
+

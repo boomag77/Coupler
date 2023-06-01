@@ -4,7 +4,7 @@ import UIKit
 class TrainViewController: UIViewController, TrainPresenter {
     
     var delegate: ChildViewControllerDelegate?
-    var dictType: StorageType?
+    var dictType: DictType?
     var cardToShow: WordCard? {
         didSet {
             showCard()

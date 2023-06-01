@@ -53,9 +53,10 @@ class WordViewController: UIViewController {
         tranedCountLabel.text = "Trained \(word.trainedCount) time(s)"
         wasRightLabel.text = "\(word.wasRight) time(s) was right"
         wasWrongLabel.text = "\(word.wasWrong) time(s) was wrong"
-        if let date = word.dateOfAdd {
-            self.dateAddedLabel.text = date
-        }
+        self.dateAddedLabel.text = word.dateOfAdd
+//        if let date = word.dateOfAdd {
+//            self.dateAddedLabel.text = date
+//        }
         
         statisticsStackView.layer.backgroundColor = UIColor.systemGray6.cgColor
         statisticsStackView.layer.borderWidth = 1
