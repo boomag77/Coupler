@@ -16,9 +16,13 @@ class TrainManager {
     }
     
     func train() {
-        
+    
         let cardGenerator = CardGenerator(dictType: self.dictType)
         let cardToShow = cardGenerator.generateCard()
+        guard let cardToShow else {
+            self.presenter?.dismiss(animated: true)
+            return
+        }
         presenter?.cardToShow = cardToShow
     }
     

@@ -10,31 +10,32 @@ class CardGenerator {
     init(dictType: DictType) {
         self.dictType = dictType
         self.emptyCard = WordCard(wordName: "No words to train in \(self.dictType.rawValue)", answers: [])
-        print("Card Generator initialized")
+        //print("Card Generator initialized")
     }
     
     //func gets not memorized words from Storage and return them in array
     private func getWordsForTrain(from dictType: DictType) -> [WordModel] {
         
-        print("func getWordsToTrain started")
         var wordsToTrain: [WordModel] = []
         
         storage.getData(for: dictType) { words in
 
-            wordsToTrain = words
+            wordsToTrain = words.filter { !$0.memorized }
 
         }
         return wordsToTrain
     }
     
-    func generateCard() -> WordCard {
+    func generateCard() -> WordCard? {
         
         let words = getWordsForTrain(from: self.dictType)
-        guard words.count > 0 else {
-            return emptyCard
+        guard !words.isEmpty else {
+            return nil
         }
+        
         let randomWord = words.randomElement()!
         let answers = getAnswers(for: randomWord, from: words)
+        
         return createCard(for: randomWord, with: answers)
         
     }

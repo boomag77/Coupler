@@ -425,6 +425,12 @@ SWIFT_CLASS("_TtC7Coupler19TrainViewController")
 @end
 
 
+@interface TrainViewController (SWIFT_EXTENSION(Coupler)) <UITableViewDelegate>
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didDeselectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+
 SWIFT_CLASS("_TtC7Coupler8WordCell")
 @interface WordCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified nameLabel;

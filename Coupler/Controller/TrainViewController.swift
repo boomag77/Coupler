@@ -20,6 +20,8 @@ class TrainViewController: UIViewController, TrainPresenter {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
+        
         let trainManager = TrainManager(dictType: self.dictType!)
         trainManager.presenter = self
         trainManager.train()
@@ -52,11 +54,9 @@ extension TrainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell")
+        cell?.selectionStyle = .none
         var content = cell?.defaultContentConfiguration()
         content?.text = self.cardToShow?.answers[indexPath.row].text
-        if isAnswerSelected {
-            cell?.layer.borderWidth = 1
-        }
         cell?.contentConfiguration = content
         
         return cell!
@@ -64,11 +64,29 @@ extension TrainViewController: UITableViewDataSource {
     
 }
 
-//extension TrainViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let selectedAnswer = cardToShow?.answers[indexPath.row]
-//        isAnswerSelected = true
-//        
-//        
-//    }
-//}
+extension TrainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            return
+        }
+        let selectedAnswer = cardToShow?.answers[indexPath.row]
+        if selectedAnswer?.isRight == true {
+            cell.layer.borderColor = UIColor.green.cgColor
+            cell.layer.backgroundColor = UIColor.red.cgColor
+        } else {
+            cell.layer.borderColor = UIColor.red.cgColor
+            cell.layer.backgroundColor = UIColor.red.cgColor
+        }
+        cell.layer.borderWidth = 1
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            return
+        }
+        cell.layer.borderWidth = 0
+    }
+}
