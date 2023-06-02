@@ -1,7 +1,7 @@
 version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
 options: "5c1b271d285063d2020332b75d7dc99ce85c12751531f4c83185f3bb7843a605"
-build_start_time: [1685648082, 774879000]
-build_end_time: [1685648085, 263167000]
+build_start_time: [1685677272, 516974000]
+build_end_time: [1685677275, 266865000]
 inputs:
   ? "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Build/Intermediates.noindex/Coupler.build/Debug-iphonesimulator/Coupler.build/DerivedSources/CoreDataGenerated/Coupler/Coupler+CoreDataModel.swift"
   : [1685589191, 192768741]
@@ -14,13 +14,13 @@ inputs:
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/MeaningLabel.swift": [1684783618, 222324084]
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/NewWordViewController.swift": [1685626996, 148792349]
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/StartViewController.swift": [1685626996, 228646282]
-  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/TrainViewController.swift": [1685648081, 485095020]
+  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/TrainViewController.swift": [1685677271, 844831870]
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/WordCell.swift": [1683651683, 630156309]
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Controller/WordViewController.swift": [1685589107, 433543860]
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/Answer.swift": [1685388876, 180692671]
-  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/CardGenerator.swift": [1685643608, 987225493]
-  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/StorageManager.swift": [1685643609, 105230203]
-  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/TrainManager.swift": [1685643609, 66139027]
-  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/WordCard.swift": [1685388876, 161794100]
-  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/WordModel.swift": [1685629767, 352234986]
+  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/CardGenerator.swift": [1685675392, 713159883]
+  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/StorageManager.swift": [1685676793, 79150524]
+  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/TrainManager.swift": [1685676623, 834773940]
+  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/WordCard.swift": [1685675392, 795324585]
+  "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/Model/WordModel.swift": [1685676475, 991810897]
   "/Users/sergey/Library/Mobile Documents/com~apple~CloudDocs/CODE PROJECTS/Coupler/Coupler/SceneDelegate.swift": [1679673360, 51833538]

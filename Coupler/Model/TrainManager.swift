@@ -8,7 +8,7 @@ protocol TrainPresenter: UIViewController {
 
 class TrainManager {
     
-    var presenter: TrainPresenter?
+    weak var presenter: TrainPresenter?
     var dictType: DictType
     
     init(dictType: DictType) {
@@ -26,7 +26,17 @@ class TrainManager {
         presenter?.cardToShow = cardToShow
     }
     
-    func checkAnswer(answer: String) {
-        
+    func updateStat(for word: WordModel, result: Bool) {
+        let wordBefore = word
+        var wordAfter = word
+        if result {
+            wordAfter.wasRight += 1
+            
+        } else {
+            wordAfter.wasWrong += 1
+            
+        }
+        let storage = StorageManager()
+        storage.edit(wordBeforeEdition: wordBefore, wordAfterEdition: wordAfter)
     }
 }

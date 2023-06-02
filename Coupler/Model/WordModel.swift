@@ -60,10 +60,6 @@ struct WordModel {
         return true
     }
     
-    private func saveChanges() {
-        let storage = StorageManager()
-        
-    }
 }
 
 

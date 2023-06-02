@@ -8,6 +8,6 @@
 import Foundation
 
 struct WordCard {
-    var wordName: String
+    var word: WordModel
     var answers: [Answer]
 }

@@ -5,11 +5,11 @@ class CardGenerator {
     let countOfAnswersInCard: Int = 3
     var dictType: DictType
     var storage = StorageManager()
-    var emptyCard: WordCard // Card to show if there are no card to train by the request
+    //var emptyCard: WordCard // Card to show if there are no card to train by the request
     
     init(dictType: DictType) {
         self.dictType = dictType
-        self.emptyCard = WordCard(wordName: "No words to train in \(self.dictType.rawValue)", answers: [])
+        //self.emptyCard = WordCard(wordName: "No words to train in \(self.dictType.rawValue)", answers: [])
         //print("Card Generator initialized")
     }
     
@@ -77,7 +77,7 @@ class CardGenerator {
     /// - Parametr answers: Answers for word (one of them is right)
     /// - Returns: training word's card as word itself and 3 answers (one of them is right)
     private func createCard(for word: WordModel, with answers: [Answer]) -> WordCard {
-        let card = WordCard(wordName: word.name, answers: answers)
+        let card = WordCard(word: word, answers: answers)
         return card
     }
 }

@@ -175,10 +175,11 @@ class StorageManager: DataStorageManager {
                         objectToEdit.setValue(value, forKey: label)
                     }
                 }
-                try managedContext.save()
+                
             } else {
                 
             }
+            try managedContext.save()
             
         } catch let error as NSError {
             print("Could not edit. \(error), \(error.localizedDescription)")
